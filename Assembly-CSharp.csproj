@@ -181,6 +181,10 @@
      <Compile Include="Assets\NGUI\Scripts\UI\UITexture.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UITooltip.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UIViewport.cs" />
+     <Compile Include="Assets\Script\mainmenu\PlayerBar.cs" />
+     <Compile Include="Assets\Script\mainmenu\PlayerInfo.cs" />
+     <Compile Include="Assets\Script\mainmenu\PlayerStatus.cs" />
+     <Compile Include="Assets\Script\mainmenu\TopBar.cs" />
      <Compile Include="Assets\Script\photon\PhotonEngine.cs" />
      <Compile Include="Assets\Script\photon\controller\ControllerBase.cs" />
      <Compile Include="Assets\Script\start\CharacterShow.cs" />
@@ -234,11 +238,11 @@
  <Reference Include="UnityEngine.Networking">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
- <Reference Include="Photon3Unity3D">
- <HintPath>/Users/xiaopan/UnitySpace/TaidouARPGProject/Assets/Plugins/Photon3Unity3D.dll</HintPath>
- </Reference>
  <Reference Include="GameCommon">
  <HintPath>/Users/xiaopan/UnitySpace/TaidouARPGProject/Assets/Plugins/GameCommon.dll</HintPath>
+ </Reference>
+ <Reference Include="Photon3Unity3D">
+ <HintPath>/Users/xiaopan/UnitySpace/TaidouARPGProject/Assets/Plugins/Photon3Unity3D.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>/Applications/Unity/Unity.app/Contents/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
