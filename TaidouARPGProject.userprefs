@@ -1,11 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/mainmenu/PlayerStatus.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/mainmenu/PlayerInfo.cs">
     <Files>
+      <File FileName="Assets/Script/mainmenu/PlayerInfo.cs" Line="141" Column="17" />
       <File FileName="../MyMecanim/Assets/_Scripts/AnimatorController/AnimatorMove.cs" Line="1" Column="1" />
-      <File FileName="Assets/Script/mainmenu/PlayerInfo.cs" Line="1" Column="1" />
-      <File FileName="Assets/Script/mainmenu/TopBar.cs" Line="16" Column="92" />
-      <File FileName="Assets/Script/mainmenu/PlayerStatus.cs" Line="27" Column="47" />
+      <File FileName="Assets/Script/mainmenu/TopBar.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/mainmenu/PlayerStatus.cs" Line="166" Column="14" />
+      <File FileName="Assets/Script/mainmenu/PlayerBar.cs" Line="25" Column="33" />
+      <File FileName="Assets/Script/mainmenu/GameController.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

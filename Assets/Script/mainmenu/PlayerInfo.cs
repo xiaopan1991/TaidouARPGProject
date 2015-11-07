@@ -17,12 +17,16 @@ public enum InfoType
 
 public class PlayerInfo : MonoBehaviour {
 
-	private static PlayerInfo _instance = null;
+	public static PlayerInfo _instance = null;
 
 	#region unity event
 	void Awake()
 	{
 		_instance = this;
+	}
+	void Start()
+	{
+		Init();
 	}
 	void Update()
 	{
@@ -67,12 +71,12 @@ public class PlayerInfo : MonoBehaviour {
 	private int _diamond = 0;
 	private int _coin = 0;
 
-	public int _energy = 0;
-	public int _toughen = 0;
+	private int _energy = 0;
+	private int _toughen = 0;
 	#endregion
 
-	private float energyTime = 0f;
-	private float toughenTime = 0f;
+	public float energyTime = 0f;
+	public float toughenTime = 0f;
 
 	public delegate void OnPlayerInfoChangeEvent(InfoType type);
 	public event OnPlayerInfoChangeEvent OnPlayerInfoChanged;
@@ -134,11 +138,17 @@ public class PlayerInfo : MonoBehaviour {
 		this.Energy = 50;
 		this.HeadPortrait = "头像底板女性";
 		this.Level = 1;
-		this.Exp = 123;
-		this.name = "柔小美";
+		this.Exp = 20;
+		this.Name = "柔小美";
 		this.Power = 1745;
 		this.Toughen = 34;
 
+		OnPlayerInfoChanged(InfoType.All);
+	}
+
+	public void ChangeName(string newName)
+	{
+		this.Name = newName;
 		OnPlayerInfoChanged(InfoType.All);
 	}
 }
