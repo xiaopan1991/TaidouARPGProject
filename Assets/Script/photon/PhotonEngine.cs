@@ -10,6 +10,9 @@ public class PhotonEngine : MonoBehaviour,IPhotonPeerListener
 	public string serverAddress = "127.0.0.1:4530";
 	public string applicationName = "GameServer";
 
+	public delegate void OnConnectedToServerEvent();
+	public event OnConnectedToServerEvent OnConnectedToServer;
+
 	private PhotonPeer peer;
 	private bool isConnected = false;
 	private static PhotonEngine _instance;
@@ -37,6 +40,15 @@ public class PhotonEngine : MonoBehaviour,IPhotonPeerListener
 	{
 		controllers.Add((byte)opCode, controller);
 	}
+	public void UnRegisterController(OperationCode opCode)
+	{
+		controllers.Remove((byte)opCode);
+	}
+
+	public void SendRequest(OperationCode opCode, Dictionary<byte, object> parameters)
+	{
+		peer.OpCustom((byte)opCode, parameters, true);
+	}
 
 	public void DebugReturn (DebugLevel level, string message)
 	{
@@ -62,6 +74,7 @@ public class PhotonEngine : MonoBehaviour,IPhotonPeerListener
 		{
 		case StatusCode.Connect:
 			isConnected = true;
+			OnConnectedToServer();
 			break;
 		default:
 			isConnected = false;
