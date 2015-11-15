@@ -114,7 +114,7 @@ public class PlayerStatus : MonoBehaviour {
 		}
 		else
 		{
-			int remainTime = 60 - (int)info.energyTime;
+			int remainTime = 60 - (int)info.EnergyTime;
 			string str = (remainTime<10)?"0"+remainTime:remainTime.ToString();
 			energyRestorePartLabel.text = "00:00:" + str;
 
@@ -134,7 +134,7 @@ public class PlayerStatus : MonoBehaviour {
 		}
 		else
 		{
-			int remainTime = 60 - (int)info.toughenTime;
+			int remainTime = 60 - (int)info.ToughenTime;
 			string str = (remainTime<10)?"0"+remainTime:remainTime.ToString();
 			toughenRestorePartLabel.text = "00:00:" + str;
 			

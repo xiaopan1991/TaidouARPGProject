@@ -1,11 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/photon/controller/ServerController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/mainmenu/InventoryManager.cs">
     <Files>
-      <File FileName="Assets/Script/photon/controller/ControllerBase.cs" Line="1" Column="1" />
-      <File FileName="Assets/Script/mainmenu/GameController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Script/photon/PhotonEngine.cs" Line="1" Column="1" />
-      <File FileName="Assets/Script/photon/controller/ServerController.cs" Line="18" Column="60" />
+      <File FileName="Assets/Script/mainmenu/PlayerInfo.cs" Line="94" Column="59" />
+      <File FileName="Assets/Script/mainmenu/Inventory.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/mainmenu/KnapsackRole.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/mainmenu/InventoryManager.cs" Line="16" Column="29" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
