@@ -12,6 +12,9 @@ public enum InfoType
 	Coin,
 	Energy,
 	Toughen,
+	HP,
+	Damage,
+	Equip,
 	All
 }
 
@@ -222,7 +225,7 @@ public class PlayerInfo : MonoBehaviour {
 		this.RingID = 1003;
 		this.CloseID = 1004;
 		this.HelmID = 1005;
-		this.WeaponID  =1006;
+		this.WeaponID = 1006;
 		this.NecklaceID = 1007;
 		this.ShoesID = 1008;
 

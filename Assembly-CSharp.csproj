@@ -186,6 +186,7 @@
      <Compile Include="Assets\Script\mainmenu\InventoryItem.cs" />
      <Compile Include="Assets\Script\mainmenu\InventoryManager.cs" />
      <Compile Include="Assets\Script\mainmenu\KnapsackRole.cs" />
+     <Compile Include="Assets\Script\mainmenu\KnapsackRoleEquip.cs" />
      <Compile Include="Assets\Script\mainmenu\PlayerBar.cs" />
      <Compile Include="Assets\Script\mainmenu\PlayerInfo.cs" />
      <Compile Include="Assets\Script\mainmenu\PlayerStatus.cs" />

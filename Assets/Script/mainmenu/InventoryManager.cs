@@ -8,7 +8,8 @@ public class InventoryManager : MonoBehaviour
 
 	public TextAsset listinfo;
 	public Dictionary<int, Inventory> inventoryDic = new Dictionary<int, Inventory>();
-	public Dictionary<int, InventoryItem> inventoryItemDict = new Dictionary<int, InventoryItem>();
+	//public Dictionary<int, InventoryItem> inventoryItemDict = new Dictionary<int, InventoryItem>();
+	public List<InventoryItem> inventoryItemList = new List<InventoryItem>();
 
 	void Awake () {
 		_instance = this;
@@ -138,12 +139,23 @@ public class InventoryManager : MonoBehaviour
 				it.Inventory = inventory;
 				it.Level = Random.Range(1,10);
 				it.Count = 1;
-				inventoryItemDict.Add(id,it);
+				//inventoryItemDict.Add(id,it);
+				inventoryItemList.Add(it);
 			}
 			else
 			{
 				InventoryItem it = null;
-				bool isExit = inventoryItemDict.TryGetValue(id, out it);
+				//bool isExit = inventoryItemDict.TryGetValue(id, out it);
+				bool isExit = false;
+				foreach(InventoryItem temp in inventoryItemList)
+				{
+					if(temp.Inventory.ID == id)
+					{
+						isExit = true;
+						it = temp;
+						break;
+					}
+				}
 				if(isExit)
 				{
 					it.Count++;
@@ -155,7 +167,8 @@ public class InventoryManager : MonoBehaviour
 					it.Level = 0;
 					it.Count = 1;
 				}
-				inventoryItemDict.Add(id,it);
+				//inventoryItemDict.Add(id,it);
+				inventoryItemList.Add(it);
 			}
 		}
 	}
