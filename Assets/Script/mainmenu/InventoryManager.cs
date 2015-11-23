@@ -11,11 +11,19 @@ public class InventoryManager : MonoBehaviour
 	//public Dictionary<int, InventoryItem> inventoryItemDict = new Dictionary<int, InventoryItem>();
 	public List<InventoryItem> inventoryItemList = new List<InventoryItem>();
 
+	public delegate void OnInventoryChangeEvent();
+	public event OnInventoryChangeEvent OnInventoryChange;
+
 	void Awake () {
 		_instance = this;
 		ReadInventoryInfo();
-		//ReadInventoryItemInfo();
 	}
+
+	void Start()
+	{
+		ReadInventoryItemInfo();
+	}
+
 
 	/*ID 名称 图标 类型（Equip，Drug） 
 		(Helm,Cloth,Weapon,Shoes,Necklace,Bracelet,Ring,Wing) 
@@ -171,6 +179,7 @@ public class InventoryManager : MonoBehaviour
 				inventoryItemList.Add(it);
 			}
 		}
+		OnInventoryChange();
 	}
 }
 

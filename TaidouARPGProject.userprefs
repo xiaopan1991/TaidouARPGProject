@@ -1,11 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/mainmenu/KnapsackRoleEquip.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/mainmenu/InventoryManager.cs">
     <Files>
-      <File FileName="Assets/Script/mainmenu/KnapsackRoleEquip.cs" Line="13" Column="19" />
-      <File FileName="Assets/Script/mainmenu/PlayerInfo.cs" Line="17" Column="8" />
-      <File FileName="Assets/Script/mainmenu/KnapsackRole.cs" Line="49" Column="14" />
-      <File FileName="Assets/Script/mainmenu/Inventory.cs" Line="27" Column="22" />
+      <File FileName="Assets/Script/mainmenu/InventoryUI.cs" Line="32" Column="4" />
+      <File FileName="Assets/Script/mainmenu/InventoryItemUI.cs" Line="44" Column="4" />
+      <File FileName="Assets/Script/mainmenu/InventoryManager.cs" Line="17" Column="17" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

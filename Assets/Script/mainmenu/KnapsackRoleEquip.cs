@@ -16,10 +16,6 @@ public class KnapsackRoleEquip : MonoBehaviour
 
 	public void SetId(int id)
 	{
-		if(id == 1006)
-		{
-			Debug.Log("11111111");
-		}
 		Inventory inventory = null;
 		bool isExit = InventoryManager._instance.inventoryDic.TryGetValue(id, out inventory);
 		if(isExit)
