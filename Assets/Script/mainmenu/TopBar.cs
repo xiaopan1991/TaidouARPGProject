@@ -8,6 +8,7 @@ public class TopBar : MonoBehaviour {
 	private UIButton coinPlusButton;
 	private UIButton diamondPlusButton;
 
+	//
 	void Awake()
 	{
 		coinLabel = this.transform.Find("CoinBg/Label").GetComponent<UILabel>();
