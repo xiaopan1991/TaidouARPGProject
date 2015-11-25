@@ -181,12 +181,14 @@
      <Compile Include="Assets\NGUI\Scripts\UI\UITexture.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UITooltip.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UIViewport.cs" />
+     <Compile Include="Assets\Script\mainmenu\EquipPopup.cs" />
      <Compile Include="Assets\Script\mainmenu\GameController.cs" />
      <Compile Include="Assets\Script\mainmenu\Inventory.cs" />
      <Compile Include="Assets\Script\mainmenu\InventoryItem.cs" />
      <Compile Include="Assets\Script\mainmenu\InventoryItemUI.cs" />
      <Compile Include="Assets\Script\mainmenu\InventoryManager.cs" />
      <Compile Include="Assets\Script\mainmenu\InventoryUI.cs" />
+     <Compile Include="Assets\Script\mainmenu\Knapsack.cs" />
      <Compile Include="Assets\Script\mainmenu\KnapsackRole.cs" />
      <Compile Include="Assets\Script\mainmenu\KnapsackRoleEquip.cs" />
      <Compile Include="Assets\Script\mainmenu\PlayerBar.cs" />

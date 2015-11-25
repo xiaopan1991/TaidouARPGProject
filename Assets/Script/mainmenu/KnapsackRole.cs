@@ -54,7 +54,7 @@ public class KnapsackRole : MonoBehaviour {
 	{
 		PlayerInfo info = PlayerInfo._instance;
 
-		helmEquip.SetId(info.HelmID);
+		/*helmEquip.SetId(info.HelmID);
 		clothEquip.SetId(info.CloseID);
 		weaponEquip.SetId(info.WeaponID);
 		shoesEquip.SetId(info.ShoesID);
@@ -62,7 +62,7 @@ public class KnapsackRole : MonoBehaviour {
 		necklaceEquip.SetId(info.NecklaceID);
 		braceletEquip.SetId(info.BraceleId);
 		ringEquip.SetId(info.RingID);
-		wingEquip.SetId(info.WingID);
+		wingEquip.SetId(info.WingID);*/
 
 		hpLabel.text = info.Hp.ToString();
 		damageLabel.text = info.Damage.ToString();

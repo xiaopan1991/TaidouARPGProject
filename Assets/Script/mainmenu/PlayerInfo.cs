@@ -79,15 +79,26 @@ public class PlayerInfo : MonoBehaviour {
 
 	private int _hp;
 	private int _damage;
-	private int _helmID = 0;
+
+	/*private int _helmID = 0;
 	private int _clothID = 0;
 	private int _weaponID = 0;
 	private int _shoesID = 0;
 	private int _necklaceID = 0;
 	private int _braceleID = 0;
 	private int _ringID = 0;
-	private int _wingID = 0;
+	private int _wingID = 0;*/
 
+	public InventoryItem helmInventoryItem;
+	public InventoryItem clothInventoryItem;
+	public InventoryItem weaponInventoryItem;
+	public InventoryItem shoesInventoryItem;
+	public InventoryItem necklaceInventoryItem;
+	public InventoryItem braceleInventoryItem;
+	public InventoryItem ringInventoryItem;
+	public InventoryItem wingInventoryItem;
+	
+	
 	#endregion
 
 	private float energyTime = 0f;
@@ -165,7 +176,7 @@ public class PlayerInfo : MonoBehaviour {
 		get{return _damage;}
 		set{_damage = value;}
 	}
-	public int HelmID
+	/*public int HelmID
 	{
 		get{return _helmID;}
 		set{_helmID = value;}
@@ -204,7 +215,7 @@ public class PlayerInfo : MonoBehaviour {
 	{
 		get{return _wingID;}
 		set{_wingID = value;}
-	}
+	}*/
 
 	#endregion
 
@@ -220,14 +231,14 @@ public class PlayerInfo : MonoBehaviour {
 		this.Power = 1745;
 		this.Toughen = 34;
 
-		this.BraceleId = 1001;
+		/*this.BraceleId = 1001;
 		this.WingID = 1002;
 		this.RingID = 1003;
 		this.CloseID = 1004;
 		this.HelmID = 1005;
 		this.WeaponID = 1006;
 		this.NecklaceID = 1007;
-		this.ShoesID = 1008;
+		this.ShoesID = 1008;*/
 
 		InitHpDamagePower();
 
@@ -240,14 +251,14 @@ public class PlayerInfo : MonoBehaviour {
 		this.Damage = this.Level * 50;
 		this.Power = this.Hp + this.Damage;
 
-		PutonEquip(this.BraceleId);
+		/*PutonEquip(this.BraceleId);
 		PutonEquip(this.WingID);
 		PutonEquip(this.RingID);
 		PutonEquip(this.CloseID);
 		PutonEquip(this.HelmID);
 		PutonEquip(this.WeaponID);
 		PutonEquip(this.NecklaceID);
-		PutonEquip(this.ShoesID);
+		PutonEquip(this.ShoesID);*/
 
 	}
 

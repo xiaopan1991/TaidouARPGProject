@@ -46,7 +46,19 @@ public class InventoryItemUI : MonoBehaviour
 
 	public void Clear()
 	{
+		it = null;
 		Label.text = "";
 		Sprite.spriteName = "bg_道具";
+	}
+
+	public void OnPress(bool isPress)
+	{
+		if(isPress && it!=null)
+		{
+			object[] objectArray = new object[2];
+			objectArray[0] = it;
+			objectArray[1] = true;
+			transform.parent.parent.parent.SendMessage("OnInventoryClick", objectArray);
+		}
 	}
 }
