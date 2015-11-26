@@ -4,10 +4,12 @@ using System.Collections.Generic;
 
 public class InventoryUI : MonoBehaviour 
 {
+	public static InventoryUI _instance;
 	public List<InventoryItemUI> itemList = new List<InventoryItemUI>();
 
 	void Awake()
 	{
+		_instance = this;
 		InventoryManager._instance.OnInventoryChange += this.OnInventoryChange;
 	}
 
@@ -33,4 +35,24 @@ public class InventoryUI : MonoBehaviour
 			itemList[i].Clear();
 		}
 	}
+	public void AddInventoryItem(InventoryItem it)
+	{
+		foreach(InventoryItemUI itUI in itemList)
+		{
+			if(itUI.it == null)
+			{
+				itUI.SetInventoryItem(it);
+				break;
+			}
+		}
+	}
 }
+
+
+
+
+
+
+
+
+

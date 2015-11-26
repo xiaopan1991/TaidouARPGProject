@@ -267,6 +267,85 @@ public class PlayerInfo : MonoBehaviour {
 		this.Name = newName;
 		OnPlayerInfoChanged(InfoType.All);
 	}
+	public void DressOn(InventoryItem it)
+	{
+		it.IsDressed = true;
+		bool isDressed = false;
+		InventoryItem inventoryItemDressed = null;
+		switch(it.Inventory.EquipTYPE)
+		{
+			case EquipType.Bracelet:
+				if(braceleInventoryItem != null)
+				{
+					isDressed = true;
+					inventoryItemDressed = braceleInventoryItem;
+				}
+				braceleInventoryItem = it;
+				break;
+			case EquipType.Cloth:
+				if(clothInventoryItem != null)
+				{
+					isDressed = true;
+					inventoryItemDressed = clothInventoryItem;
+				}
+				clothInventoryItem = it;
+				break;
+			case EquipType.Helm:
+				if(helmInventoryItem != null)
+				{
+					isDressed = true;
+					inventoryItemDressed = helmInventoryItem;
+				}
+				helmInventoryItem = it;
+				break;
+			case EquipType.Necklace:
+				if(necklaceInventoryItem != null)
+				{
+					isDressed = true;
+					inventoryItemDressed = necklaceInventoryItem;
+				}
+				necklaceInventoryItem = it;
+				break;
+			case EquipType.Ring:
+				if(ringInventoryItem != null)
+				{
+					isDressed = true;
+					inventoryItemDressed = ringInventoryItem;
+					ringInventoryItem = it;
+				}
+				break;
+			case EquipType.Shoes:
+				if(shoesInventoryItem != null)
+				{
+					isDressed = true;
+					inventoryItemDressed = shoesInventoryItem;
+				}
+					shoesInventoryItem = it;
+				break;
+			case EquipType.Weapon:
+				if(weaponInventoryItem != null)
+				{
+					isDressed = true;
+					inventoryItemDressed = weaponInventoryItem;
+				}
+				weaponInventoryItem = it;
+				break;
+			case EquipType.Wing:
+				if(wingInventoryItem != null)
+				{
+					isDressed = true;
+					inventoryItemDressed = wingInventoryItem;
+				}
+				wingInventoryItem = it;
+				break;
+		}
+		if(isDressed)
+		{
+			inventoryItemDressed.IsDressed = false;
+			InventoryUI._instance.AddInventoryItem(inventoryItemDressed);
+		}
+		OnPlayerInfoChanged(InfoType.Equip);
+	}
 
 	void PutonEquip(int id)
 	{

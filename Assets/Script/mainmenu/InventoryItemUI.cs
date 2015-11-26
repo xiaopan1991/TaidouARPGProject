@@ -5,7 +5,7 @@ public class InventoryItemUI : MonoBehaviour
 {
 	private UISprite sprite;
 	private UILabel label;
-	private InventoryItem it;
+	public InventoryItem it;
 
 	private UISprite Sprite
 	{
@@ -55,9 +55,10 @@ public class InventoryItemUI : MonoBehaviour
 	{
 		if(isPress && it!=null)
 		{
-			object[] objectArray = new object[2];
+			object[] objectArray = new object[3];
 			objectArray[0] = it;
 			objectArray[1] = true;
+			objectArray[2] = this;
 			transform.parent.parent.parent.SendMessage("OnInventoryClick", objectArray);
 		}
 	}

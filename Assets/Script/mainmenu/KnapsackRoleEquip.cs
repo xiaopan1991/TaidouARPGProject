@@ -27,6 +27,8 @@ public class KnapsackRoleEquip : MonoBehaviour
 
 	public void SetInventoryItem(InventoryItem it)
 	{
+		if(it==null)
+			return;
 		this.it = it;
 		Sprite.spriteName = it.Inventory.Icon;
 	}
@@ -35,9 +37,10 @@ public class KnapsackRoleEquip : MonoBehaviour
 	{
 		if(isPress)
 		{
-			object[] objectArray = new object[2];
+			object[] objectArray = new object[3];
 			objectArray[0] = it;
 			objectArray[1] = false;
+			objectArray[2] = this;
 			transform.parent.parent.SendMessage("OnInventoryClick", objectArray);
 		}
 	}

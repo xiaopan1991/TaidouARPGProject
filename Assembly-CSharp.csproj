@@ -187,6 +187,7 @@
      <Compile Include="Assets\Script\mainmenu\InventoryItem.cs" />
      <Compile Include="Assets\Script\mainmenu\InventoryItemUI.cs" />
      <Compile Include="Assets\Script\mainmenu\InventoryManager.cs" />
+     <Compile Include="Assets\Script\mainmenu\InventoryPopup.cs" />
      <Compile Include="Assets\Script\mainmenu\InventoryUI.cs" />
      <Compile Include="Assets\Script\mainmenu\Knapsack.cs" />
      <Compile Include="Assets\Script\mainmenu\KnapsackRole.cs" />
