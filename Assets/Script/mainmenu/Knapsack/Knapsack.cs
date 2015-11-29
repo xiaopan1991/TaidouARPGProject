@@ -16,15 +16,25 @@ public class Knapsack : MonoBehaviour {
 	{
 		InventoryItem it = objectArray[0] as InventoryItem;
 		bool isLeft = (bool)objectArray[1];
-		InventoryItemUI itUI = objectArray[2] as InventoryItemUI;
 
 		if(it.Inventory.InventoryTYPE == InventoryType.Equip)
 		{
-			equipPopup.Show(it, itUI, isLeft);
+			InventoryItemUI itUI = null;
+			KnapsackRoleEquip roleEquip = null;
+			if(isLeft)
+			{
+				itUI = objectArray[2] as InventoryItemUI;
+			}
+			else
+			{
+				roleEquip = objectArray[2] as KnapsackRoleEquip;
+			}
+			equipPopup.Show(it, itUI, roleEquip, isLeft);
 		}
 		else
 		{
-			inventoryPopup.Show(it);
+			InventoryItemUI itUI = objectArray[2] as InventoryItemUI;
+			inventoryPopup.Show(it, itUI);
 		}
 	}
 }

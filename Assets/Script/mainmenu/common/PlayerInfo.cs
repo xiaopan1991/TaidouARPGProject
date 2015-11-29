@@ -262,6 +262,44 @@ public class PlayerInfo : MonoBehaviour {
 
 	}
 
+	public int GetOverallPower()
+	{
+		float power = (float)this.Power;
+		if(helmInventoryItem != null)
+		{
+			power += helmInventoryItem.Inventory.Power*(1 + (helmInventoryItem.Level - 1)/10f);
+		}
+		if(clothInventoryItem != null)
+		{
+			power += clothInventoryItem.Inventory.Power*(1 + (clothInventoryItem.Level - 1)/10f);
+		}
+		if(weaponInventoryItem != null)
+		{
+			power += weaponInventoryItem.Inventory.Power*(1 + (weaponInventoryItem.Level - 1)/10f);
+		}
+		if(shoesInventoryItem != null)
+		{
+			power += shoesInventoryItem.Inventory.Power*(1 + (shoesInventoryItem.Level - 1)/10f);
+		}
+		if(necklaceInventoryItem != null)
+		{
+			power += necklaceInventoryItem.Inventory.Power*(1 + (necklaceInventoryItem.Level - 1)/10f);
+		}
+		if(braceleInventoryItem != null)
+		{
+			power += braceleInventoryItem.Inventory.Power*(1 + (braceleInventoryItem.Level - 1)/10f);
+		}
+		if(ringInventoryItem != null)
+		{
+			power += ringInventoryItem.Inventory.Power*(1 + (ringInventoryItem.Level - 1)/10f);
+		}
+		if(wingInventoryItem != null)
+		{
+			power += wingInventoryItem.Inventory.Power*(1 + (wingInventoryItem.Level - 1)/10f);
+		}
+		return (int)power;
+	}
+
 	public void ChangeName(string newName)
 	{
 		this.Name = newName;
@@ -311,8 +349,8 @@ public class PlayerInfo : MonoBehaviour {
 				{
 					isDressed = true;
 					inventoryItemDressed = ringInventoryItem;
-					ringInventoryItem = it;
 				}
+				ringInventoryItem = it;
 				break;
 			case EquipType.Shoes:
 				if(shoesInventoryItem != null)
@@ -347,6 +385,73 @@ public class PlayerInfo : MonoBehaviour {
 		OnPlayerInfoChanged(InfoType.Equip);
 	}
 
+	public void DressOff(InventoryItem it)
+	{
+		switch(it.Inventory.EquipTYPE)
+		{
+		case EquipType.Bracelet:
+			if(braceleInventoryItem != null)
+			{
+				braceleInventoryItem = null;
+			}
+			break;
+		case EquipType.Cloth:
+			if(clothInventoryItem != null)
+			{
+				clothInventoryItem = null;
+			}
+			break;
+		case EquipType.Helm:
+			if(helmInventoryItem != null)
+			{
+				helmInventoryItem = null;
+			}
+			break;
+		case EquipType.Necklace:
+			if(necklaceInventoryItem != null)
+			{
+				necklaceInventoryItem  = null;
+			}
+			break;
+		case EquipType.Ring:
+			if(ringInventoryItem != null)
+			{
+				ringInventoryItem = null;
+			}
+			break;
+		case EquipType.Shoes:
+			if(shoesInventoryItem != null)
+			{
+				shoesInventoryItem = null;
+			}
+			break;
+		case EquipType.Weapon:
+			if(weaponInventoryItem != null)
+			{
+				weaponInventoryItem = null;
+			}
+			break;
+		case EquipType.Wing:
+			if(wingInventoryItem != null)
+			{
+				wingInventoryItem = null;
+			}
+			break;
+		}
+		it.IsDressed = false;
+		InventoryUI._instance.AddInventoryItem(it);
+		OnPlayerInfoChanged(InfoType.Equip);
+	}
+
+	public void InventoryUse(InventoryItem it, int count)
+	{
+		it.Count -= count;
+		if(it.Count <= 0)
+		{
+			InventoryManager._instance.inventoryItemList.Remove(it);
+		}
+	}
+
 	void PutonEquip(int id)
 	{
 		if(id == 0)
@@ -365,7 +470,19 @@ public class PlayerInfo : MonoBehaviour {
 		this.Hp -= inventory.Hp;
 		this.Damage -= inventory.Damage;
 	}
-
+	public bool GetCoin(int count)
+	{
+		if(Coin >= count)
+		{
+			Coin -= count;
+			OnPlayerInfoChanged(InfoType.Coin);
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
 }
 
 

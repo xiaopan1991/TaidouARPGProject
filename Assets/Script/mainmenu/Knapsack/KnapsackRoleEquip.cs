@@ -35,7 +35,7 @@ public class KnapsackRoleEquip : MonoBehaviour
 
 	public void OnPress(bool isPress)
 	{
-		if(isPress)
+		if(isPress && it!=null)
 		{
 			object[] objectArray = new object[3];
 			objectArray[0] = it;
@@ -43,6 +43,11 @@ public class KnapsackRoleEquip : MonoBehaviour
 			objectArray[2] = this;
 			transform.parent.parent.SendMessage("OnInventoryClick", objectArray);
 		}
+	}
+	public void Clear()
+	{
+		it = null;
+		Sprite.spriteName = "bg_道具";
 	}
 }
 
