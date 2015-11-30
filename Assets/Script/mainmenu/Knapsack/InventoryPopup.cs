@@ -47,12 +47,6 @@ public class InventoryPopup : MonoBehaviour
 		btnLabel.text = "批量使用(" + it.Count +")";
 	}
 
-	public void OnClose()
-	{
-		Clear();
-		gameObject.SetActive(false);
-	}
-
 	public void OnUse()
 	{
 		itUI.ChangeCount(1);
@@ -71,6 +65,18 @@ public class InventoryPopup : MonoBehaviour
 	{
 		it = null;
 		itUI = null;
+	}
+
+	public void OnClose()
+	{
+		Close();
+		transform.parent.SendMessage("DisableButton");
+	}
+
+	public void Close()
+	{
+		Clear();
+		gameObject.SetActive(false);
 	}
 }
 

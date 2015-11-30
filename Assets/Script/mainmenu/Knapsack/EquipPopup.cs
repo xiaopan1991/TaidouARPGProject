@@ -111,10 +111,10 @@ public class EquipPopup : MonoBehaviour {
 			roleEquip.Clear();
 			PlayerInfo._instance.DressOff(this.it);
 		}
-		ClearObject();
-		gameObject.SetActive(false);
 		int endValue = PlayerInfo._instance.GetOverallPower();
 		powershow.ShowPowerChange(startValue,endValue);
+		InventoryUI._instance.SendMessage("UpdateCount");
+		OnClose();
 	}
 	void ClearObject()
 	{
@@ -123,6 +123,12 @@ public class EquipPopup : MonoBehaviour {
 		roleEquip = null;
 	}
 	public void OnClose()
+	{
+		Close();
+		transform.parent.SendMessage("DisableButton");
+	}
+	
+	public void Close()
 	{
 		ClearObject();
 		gameObject.SetActive(false);

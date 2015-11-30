@@ -387,6 +387,8 @@ public class PlayerInfo : MonoBehaviour {
 
 	public void DressOff(InventoryItem it)
 	{
+		it.IsDressed = false;
+
 		switch(it.Inventory.EquipTYPE)
 		{
 		case EquipType.Bracelet:
@@ -438,7 +440,7 @@ public class PlayerInfo : MonoBehaviour {
 			}
 			break;
 		}
-		it.IsDressed = false;
+
 		InventoryUI._instance.AddInventoryItem(it);
 		OnPlayerInfoChanged(InfoType.Equip);
 	}
@@ -482,6 +484,11 @@ public class PlayerInfo : MonoBehaviour {
 		{
 			return false;
 		}
+	}
+	public void AddCoin(int count)
+	{
+		this.Coin += count;
+		OnPlayerInfoChanged(InfoType.Coin);
 	}
 }
 

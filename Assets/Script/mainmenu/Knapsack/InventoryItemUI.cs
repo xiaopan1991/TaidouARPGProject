@@ -51,9 +51,9 @@ public class InventoryItemUI : MonoBehaviour
 		Sprite.spriteName = "bg_道具";
 	}
 
-	public void OnPress(bool isPress)
+	public void OnClick()
 	{
-		if(isPress && it!=null)
+		if(it!=null)
 		{
 			object[] objectArray = new object[3];
 			objectArray[0] = it;
