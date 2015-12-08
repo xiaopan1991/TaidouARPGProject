@@ -181,6 +181,9 @@
      <Compile Include="Assets\NGUI\Scripts\UI\UITexture.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UITooltip.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UIViewport.cs" />
+     <Compile Include="Assets\Script\common\GameController.cs" />
+     <Compile Include="Assets\Script\common\MessageManager.cs" />
+     <Compile Include="Assets\Script\common\PlayerInfo.cs" />
      <Compile Include="Assets\Script\mainmenu\Knapsack\EquipPopup.cs" />
      <Compile Include="Assets\Script\mainmenu\Knapsack\Inventory.cs" />
      <Compile Include="Assets\Script\mainmenu\Knapsack\InventoryItem.cs" />
@@ -191,13 +194,12 @@
      <Compile Include="Assets\Script\mainmenu\Knapsack\Knapsack.cs" />
      <Compile Include="Assets\Script\mainmenu\Knapsack\KnapsackRole.cs" />
      <Compile Include="Assets\Script\mainmenu\Knapsack\KnapsackRoleEquip.cs" />
+     <Compile Include="Assets\Script\mainmenu\Knapsack\PowerShow.cs" />
      <Compile Include="Assets\Script\mainmenu\PlayerBar.cs" />
      <Compile Include="Assets\Script\mainmenu\PlayerStatus.cs" />
      <Compile Include="Assets\Script\mainmenu\TopBar.cs" />
-     <Compile Include="Assets\Script\mainmenu\common\GameController.cs" />
-     <Compile Include="Assets\Script\mainmenu\common\MessageManager.cs" />
-     <Compile Include="Assets\Script\mainmenu\common\PlayerInfo.cs" />
-     <Compile Include="Assets\Script\mainmenu\common\PowerShow.cs" />
+     <Compile Include="Assets\Script\mainmenu\task\Task.cs" />
+     <Compile Include="Assets\Script\mainmenu\task\TaskManager.cs" />
      <Compile Include="Assets\Script\photon\PhotonEngine.cs" />
      <Compile Include="Assets\Script\photon\controller\ControllerBase.cs" />
      <Compile Include="Assets\Script\photon\controller\ServerController.cs" />
@@ -212,7 +214,7 @@
      <None Include="Assets\NGUI\Examples\Models\Orc\Orc Skin.shader" />
      <None Include="Assets\NGUI\Examples\Atlases\Wooden\Arimo20.txt" />
      <None Include="Assets\NGUI\Examples\Atlases\Wooden\Arimo14.txt" />
-     <None Include="Assets\Script\mainmenu\Knapsack\InventoryListinfo.txt" />
+     <None Include="Assets\Script\txt\InventoryListinfo.txt" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text 1.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored (TextureClip).shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed) (TextureClip).shader" />
@@ -231,6 +233,7 @@
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored 2.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text 3.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Packed 2.shader" />
+     <None Include="Assets\Script\txt\Taskinfo.txt" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Packed 1.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored 1.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored.shader" />

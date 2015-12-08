@@ -1,22 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/mainmenu/common/PowerShow.cs">
-    <Files>
-      <File FileName="Assets/Script/mainmenu/PlayerBar.cs" Line="30" Column="71" />
-      <File FileName="Assets/Script/mainmenu/PlayerStatus.cs" Line="1" Column="1" />
-      <File FileName="Assets/Script/mainmenu/common/MessageManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/Script/mainmenu/Knapsack/EquipPopup.cs" Line="117" Column="1" />
-      <File FileName="Assets/Script/mainmenu/Knapsack/InventoryPopup.cs" Line="1" Column="1" />
-      <File FileName="Assets/Script/mainmenu/Knapsack/Knapsack.cs" Line="1" Column="1" />
-      <File FileName="Assets/Script/mainmenu/Knapsack/InventoryItemUI.cs" Line="1" Column="1" />
-      <File FileName="Assets/Script/mainmenu/common/PlayerInfo.cs" Line="1" Column="1" />
-      <File FileName="Assets/Script/mainmenu/common/PowerShow.cs" Line="41" Column="5" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/xiaopan/UnitySpace/TaidouARPGProject/Assets/Script/mainmenu/Knapsack/EquipPopup.cs" line="103" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
