@@ -12,10 +12,10 @@ public class TaskManager : MonoBehaviour {
 	/// </summary>
 	public void InitTask()
 	{
-		string[] taskinfoArray = taskinfoText.ToString().Split("\n");
+		string[] taskinfoArray = taskinfoText.ToString().Split('\n');
 		foreach(string str in taskinfoArray)
 		{
-			string[] proArray = str.Split("|");
+			string[] proArray = str.Split('|');
 			Task task = new Task();
 			task.Id = int.Parse(proArray[0]);
 			switch(proArray[1])
@@ -33,11 +33,11 @@ public class TaskManager : MonoBehaviour {
 			task.Name = proArray[2];
 			task.Icon = proArray[3];
 			task.Des = proArray[4];
-			task.Coin = proArray[5];
-			task.Diamond = proArray[6];
+			task.Coin = int.Parse(proArray[5]);
+			task.Diamond = int.Parse(proArray[6]);
 			task.TalkNpc = proArray[7];
-			task.IdNpc = proArray[8];
-			task.IdTranscript = proArray[9];
+			task.IdNpc = int.Parse(proArray[8]);
+			task.IdTranscript = int.Parse(proArray[9]);
 			taskList.Add(task);
 		}
 	}
