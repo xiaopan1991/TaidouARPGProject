@@ -45,6 +45,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\BottomBar.cs" />
      <Compile Include="Assets\Model\Npc-boy\villarger_B_Boy\scripts\characterRotate.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\EquipItems.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\EquipRandomItem.cs" />
@@ -199,7 +200,9 @@
      <Compile Include="Assets\Script\mainmenu\PlayerStatus.cs" />
      <Compile Include="Assets\Script\mainmenu\TopBar.cs" />
      <Compile Include="Assets\Script\mainmenu\task\Task.cs" />
+     <Compile Include="Assets\Script\mainmenu\task\TaskItemUI.cs" />
      <Compile Include="Assets\Script\mainmenu\task\TaskManager.cs" />
+     <Compile Include="Assets\Script\mainmenu\task\TaskUI.cs" />
      <Compile Include="Assets\Script\photon\PhotonEngine.cs" />
      <Compile Include="Assets\Script\photon\controller\ControllerBase.cs" />
      <Compile Include="Assets\Script\photon\controller\ServerController.cs" />
