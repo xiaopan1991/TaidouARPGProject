@@ -30,11 +30,24 @@ public class TaskItemUI : MonoBehaviour {
 		rewardButton = transform.Find("RewardButton").GetComponent<UIButton>();
 		combatButton = transform.Find("CombatButton").GetComponent<UIButton>();
 		combatButtonLabel = transform.Find("CombatButton/Label").GetComponent<UILabel>();
+
+		EventDelegate ed1 = new EventDelegate(this, "OnCombat");
+		combatButton.onClick.Add(ed1);
+
+		EventDelegate ed2 = new EventDelegate(this, "OnReward");
+		rewardButton.onClick.Add(ed2);
 	}
 
 	public void SetTask(Task task)
 	{
 		this.task = task;
+		this.task.OnTaskChange += this.OnTaskChange;
+
+		UpdateShow();
+	}
+
+	void UpdateShow()
+	{
 		switch(task.TaskType)
 		{
 		case TaskType.Main:
@@ -88,6 +101,21 @@ public class TaskItemUI : MonoBehaviour {
 		}
 	}
 
+	void OnCombat()
+	{
+		TaskUI._instance.Hide();
+		TaskManager._instance.OnExcuteTask(task);
+	}
+
+	void OnReward()
+	{
+		
+	}
+
+	void OnTaskChange()
+	{
+		UpdateShow();
+	}
 }
 
 

@@ -181,9 +181,11 @@
      <Compile Include="Assets\NGUI\Scripts\UI\UITexture.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UITooltip.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UIViewport.cs" />
+     <Compile Include="Assets\NPCDialogUI.cs" />
      <Compile Include="Assets\Script\common\FollowTarget.cs" />
      <Compile Include="Assets\Script\common\GameController.cs" />
      <Compile Include="Assets\Script\common\MessageManager.cs" />
+     <Compile Include="Assets\Script\common\NPCManager.cs" />
      <Compile Include="Assets\Script\common\PlayerInfo.cs" />
      <Compile Include="Assets\Script\mainmenu\BottomBar.cs" />
      <Compile Include="Assets\Script\mainmenu\Knapsack\EquipPopup.cs" />

@@ -18,6 +18,9 @@ public enum TaskProgress
 
 public class Task 
 {
+	public delegate void OnTaskChangeEvent();
+	public event OnTaskChangeEvent OnTaskChange;
+
 	private int id;
 	public int Id
 	{
@@ -84,6 +87,13 @@ public class Task
 	public TaskProgress TaskProgress
 	{
 		get{return taskProgress;}
-		set{taskProgress = value;}
+		set
+		{
+			if(taskProgress != value)
+			{
+				taskProgress = value;
+				OnTaskChange();
+			}
+		}
 	}
 }

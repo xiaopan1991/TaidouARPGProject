@@ -5,14 +5,27 @@ public class TaskManager : MonoBehaviour {
 
 	public static TaskManager _instance;
 	public TextAsset taskinfoText;
-
+	private Task currentTask;
 	private ArrayList taskList = new ArrayList();
+	private PlayerAutoMove playerAutoMove;
+	public PlayerAutoMove PlayerAutoMove
+	{
+		get{
+			if(playerAutoMove == null)
+			{
+				playerAutoMove = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAutoMove>();
+			}
+			return playerAutoMove;
+		}
+	}
 
 	void Awake()
 	{
 		_instance = this;
 		InitTask();
 	}
+
+
 
 	/// <summary>
 	/// 初始化任务信息
@@ -52,5 +65,32 @@ public class TaskManager : MonoBehaviour {
 	public ArrayList GetTaskList()
 	{
 		return taskList;
+	}
+	public void OnExcuteTask(Task task)
+	{
+		this.currentTask = task;
+		if(currentTask.TaskProgress == TaskProgress.NoStart)
+		{
+			PlayerAutoMove.SetDestination(NPCManager._instance.GetNpcById(currentTask.IdNpc).transform.position);
+		}
+		else if(currentTask.TaskProgress == TaskProgress.Accept)
+		{
+			PlayerAutoMove.SetDestination(NPCManager._instance.TranscriptGo.transform.position);
+		}
+	}
+	public void OnAcceptTask()
+	{
+		this.currentTask.TaskProgress = TaskProgress.Accept;
+		//TODO寻路到副本
+		PlayerAutoMove.SetDestination(NPCManager._instance.TranscriptGo.transform.position);
+	}
+	public void OnArriveDestination()
+	{
+		if(this.currentTask.TaskProgress == TaskProgress.NoStart)
+		{
+			NPCDialogUI._instance.Show(this.currentTask.TalkNpc);
+		}
+
+		//达到副本//TODO
 	}
 }
