@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerMove : MonoBehaviour {
+public class PlayerVillageMove : MonoBehaviour {
 
 	public float velocity = 5;
 	private Rigidbody m_rigidbody;
@@ -23,5 +23,11 @@ public class PlayerMove : MonoBehaviour {
 		float v = Input.GetAxis("Vertical");
 		Vector3 vel = m_rigidbody.velocity;
 		this.m_rigidbody.velocity = new Vector3(-h*velocity, vel.y, -v*velocity);
+
+		if(Mathf.Abs(h)>0.005f || Mathf.Abs(v)>0.005f)
+		{
+			transform.rotation = Quaternion.LookRotation(new Vector3(-h,0,-v));
+		}
+
 	}
 }

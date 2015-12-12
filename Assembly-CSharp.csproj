@@ -181,6 +181,7 @@
      <Compile Include="Assets\NGUI\Scripts\UI\UITexture.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UITooltip.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UIViewport.cs" />
+     <Compile Include="Assets\Script\common\FollowTarget.cs" />
      <Compile Include="Assets\Script\common\GameController.cs" />
      <Compile Include="Assets\Script\common\MessageManager.cs" />
      <Compile Include="Assets\Script\common\PlayerInfo.cs" />
@@ -206,7 +207,9 @@
      <Compile Include="Assets\Script\photon\PhotonEngine.cs" />
      <Compile Include="Assets\Script\photon\controller\ControllerBase.cs" />
      <Compile Include="Assets\Script\photon\controller\ServerController.cs" />
-     <Compile Include="Assets\Script\player\PlayerMove.cs" />
+     <Compile Include="Assets\Script\player\PlayerAutoMove.cs" />
+     <Compile Include="Assets\Script\player\PlayerVillageAnimation.cs" />
+     <Compile Include="Assets\Script\player\PlayerVillageMove.cs" />
      <Compile Include="Assets\Script\start\CharacterShow.cs" />
      <Compile Include="Assets\Script\start\StartmenuController.cs" />
      <Compile Include="Assets\Script\start\serverProperty.cs" />
