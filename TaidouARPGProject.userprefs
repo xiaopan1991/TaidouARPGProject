@@ -1,9 +1,15 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/player/PlayerMove.cs">
+  <MonoDevelop.Ide.Workbench>
     <Files>
       <File FileName="Assets/Script/mainmenu/task/TaskManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/Script/player/PlayerMove.cs" Line="17" Column="2" />
+      <File FileName="Assets/Script/mainmenu/task/TaskItemUI.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/player/PlayerAutoMove.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/common/NPCManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/NPCDialogUI.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/player/PlayerVillageAnimation.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/player/PlayerVillageMove.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/mainmenu/task/Task.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
