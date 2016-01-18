@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//NPCDialogUI
 public class NPCDialogUI : MonoBehaviour {
 
 	private TweenPosition tween;
