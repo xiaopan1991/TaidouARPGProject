@@ -7,6 +7,7 @@ public class TranscriptMapDialog : MonoBehaviour {
 	private UILabel desLabel;
 	private UILabel energyTagLabel;
 	private UILabel energyLabel;
+	private GameObject btnEnterGO;
 	private UIButton enterButton;
 	private UIButton closeButton;
 
@@ -17,6 +18,7 @@ public class TranscriptMapDialog : MonoBehaviour {
 		desLabel = this.transform.Find("Sprite/DesLabel").GetComponent<UILabel>();
 		energyTagLabel = this.transform.Find("Sprite/EnergyTagLabel").GetComponent<UILabel>();
 		energyLabel = this.transform.Find("Sprite/EnergyLabel").GetComponent<UILabel>();
+		btnEnterGO = this.transform.Find("BtnEnter").gameObject;
 		enterButton = this.transform.Find("BtnEnter").GetComponent<UIButton>();
 		closeButton = this.transform.Find("BtnClose").GetComponent<UIButton>();
 
@@ -30,7 +32,8 @@ public class TranscriptMapDialog : MonoBehaviour {
 	{
 		energyLabel.enabled = false;
 		energyTagLabel.enabled = false;
-		enterButton.enabled = false;
+//		enterButton.enabled = false;
+		NGUITools.SetActive(btnEnterGO,false);
 
 		desLabel.text = "当前等级无法进入改地下城";
 		Show();
@@ -40,7 +43,8 @@ public class TranscriptMapDialog : MonoBehaviour {
 	{
 		energyLabel.enabled = true;
 		energyTagLabel.enabled = true;
-		enterButton.enabled = true;
+//		enterButton.enabled = true;
+		NGUITools.SetActive(btnEnterGO,true);
 
 		desLabel.text = transcript.des;
 		energyLabel.text = "3";
