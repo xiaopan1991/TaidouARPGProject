@@ -211,6 +211,8 @@
      <Compile Include="Assets\Script\mainmenu\task\TaskManager.cs" />
      <Compile Include="Assets\Script\mainmenu\task\TaskUI.cs" />
      <Compile Include="Assets\Script\mainmenu\transcript\BtnTranscript.cs" />
+     <Compile Include="Assets\Script\mainmenu\transcript\TranscriptMapDialog.cs" />
+     <Compile Include="Assets\Script\mainmenu\transcript\TranscriptMapUI.cs" />
      <Compile Include="Assets\Script\photon\PhotonEngine.cs" />
      <Compile Include="Assets\Script\photon\controller\ControllerBase.cs" />
      <Compile Include="Assets\Script\photon\controller\ServerController.cs" />
