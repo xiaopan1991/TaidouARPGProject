@@ -64,4 +64,9 @@ public class Skill {
 		get{return level;}
 		set{level=value;}
 	}
+
+	public void Upgrade()
+	{
+		Level++;
+	}
 }

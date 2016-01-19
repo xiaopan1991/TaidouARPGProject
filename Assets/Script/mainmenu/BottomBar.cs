@@ -52,7 +52,7 @@ public class BottomBar : MonoBehaviour {
 	}
 	void OnSkill()
 	{
-		
+		SkillUI._instance.Show();
 	}
 	void OnShop()
 	{

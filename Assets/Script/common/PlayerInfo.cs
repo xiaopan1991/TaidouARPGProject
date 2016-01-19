@@ -237,7 +237,7 @@ public class PlayerInfo : MonoBehaviour {
 		this.Diamond = 10000;
 		this.Energy = 50;
 		this.HeadPortrait = "头像底板女性";
-		this.Level = 1;
+		this.Level = 10;
 		this.Exp = 20;
 		this.Name = "柔小美";
 		this.Power = 1745;

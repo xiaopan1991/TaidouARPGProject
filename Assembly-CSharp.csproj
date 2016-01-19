@@ -202,6 +202,8 @@
      <Compile Include="Assets\Script\mainmenu\PlayerBar.cs" />
      <Compile Include="Assets\Script\mainmenu\PlayerStatus.cs" />
      <Compile Include="Assets\Script\mainmenu\Skill\Skill.cs" />
+     <Compile Include="Assets\Script\mainmenu\Skill\SkillItemUI.cs" />
+     <Compile Include="Assets\Script\mainmenu\Skill\SkillUI.cs" />
      <Compile Include="Assets\Script\mainmenu\TopBar.cs" />
      <Compile Include="Assets\Script\mainmenu\task\NPCDialogUI.cs" />
      <Compile Include="Assets\Script\mainmenu\task\Task.cs" />
