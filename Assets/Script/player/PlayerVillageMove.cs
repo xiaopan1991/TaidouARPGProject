@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerVillageMove : MonoBehaviour {
 
-	public float velocity = 5;
+	public float velocity = 10;
 	private Rigidbody m_rigidbody;
 	private NavMeshAgent agent;
 

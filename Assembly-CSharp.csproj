@@ -45,6 +45,35 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Effects\Script\Button.cs" />
+     <Compile Include="Assets\Effects\Scripts\Demo\MyGuiV2.cs" />
+     <Compile Include="Assets\Effects\Scripts\Prefabs\Balls\AddMaterialOnHit.cs" />
+     <Compile Include="Assets\Effects\Scripts\Prefabs\Balls\AnimatorBehaviour.cs" />
+     <Compile Include="Assets\Effects\Scripts\Prefabs\Balls\LazyLoad.cs" />
+     <Compile Include="Assets\Effects\Scripts\Prefabs\Balls\ProjectileCollisionBehaviour.cs" />
+     <Compile Include="Assets\Effects\Scripts\Prefabs\Balls\SetRandomStartPoint.cs" />
+     <Compile Include="Assets\Effects\Scripts\Prefabs\Buffs\ShieldCollisionBehaviour.cs" />
+     <Compile Include="Assets\Effects\Scripts\Prefabs\Objects\MoveOnGround.cs" />
+     <Compile Include="Assets\Effects\Scripts\Prefabs\Shots\LineRendererBehaviour.cs" />
+     <Compile Include="Assets\Effects\Scripts\Prefabs\Waves\ClothGridCollisionBehaviour.cs" />
+     <Compile Include="Assets\Effects\Scripts\Prefabs\Waves\InstanceMaterial.cs" />
+     <Compile Include="Assets\Effects\Scripts\Share\Billboard.cs" />
+     <Compile Include="Assets\Effects\Scripts\Share\CollisionActiveBehaviour.cs" />
+     <Compile Include="Assets\Effects\Scripts\Share\DeadTime.cs" />
+     <Compile Include="Assets\Effects\Scripts\Share\EffectSettings.cs" />
+     <Compile Include="Assets\Effects\Scripts\Share\FadeInOutLight.cs" />
+     <Compile Include="Assets\Effects\Scripts\Share\FadeInOutParticles.cs" />
+     <Compile Include="Assets\Effects\Scripts\Share\FadeInOutScale.cs" />
+     <Compile Include="Assets\Effects\Scripts\Share\FadeInOutShaderColor.cs" />
+     <Compile Include="Assets\Effects\Scripts\Share\FadeInOutShaderFloat.cs" />
+     <Compile Include="Assets\Effects\Scripts\Share\FadeInOutStatus.cs" />
+     <Compile Include="Assets\Effects\Scripts\Share\InvokeInterval.cs" />
+     <Compile Include="Assets\Effects\Scripts\Share\OnStartSendCollision.cs" />
+     <Compile Include="Assets\Effects\Scripts\Share\RandomRotateOnStart.cs" />
+     <Compile Include="Assets\Effects\Scripts\Share\SetPositionOnHit.cs" />
+     <Compile Include="Assets\Effects\Scripts\Share\UVTextureAnimator.cs" />
+     <Compile Include="Assets\Effects\Standard Assets\Image Effects (Pro Only)\ImageEffectBase.cs" />
+     <Compile Include="Assets\Effects\Standard Assets\Image Effects (Pro Only)\ImageEffects.cs" />
      <Compile Include="Assets\Model\Npc_boy\villarger_B_Boy\scripts\characterRotate.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\EquipItems.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\EquipRandomItem.cs" />
@@ -181,6 +210,7 @@
      <Compile Include="Assets\NGUI\Scripts\UI\UITexture.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UITooltip.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UIViewport.cs" />
+     <Compile Include="Assets\PlayerAttack.cs" />
      <Compile Include="Assets\Script\common\FollowTarget.cs" />
      <Compile Include="Assets\Script\common\GameController.cs" />
      <Compile Include="Assets\Script\common\MessageManager.cs" />
@@ -210,18 +240,24 @@
      <Compile Include="Assets\Script\mainmenu\task\TaskItemUI.cs" />
      <Compile Include="Assets\Script\mainmenu\task\TaskManager.cs" />
      <Compile Include="Assets\Script\mainmenu\task\TaskUI.cs" />
-     <Compile Include="Assets\Script\mainmenu\transcript\BtnTranscript.cs" />
-     <Compile Include="Assets\Script\mainmenu\transcript\TranscriptMapDialog.cs" />
-     <Compile Include="Assets\Script\mainmenu\transcript\TranscriptMapUI.cs" />
+     <Compile Include="Assets\Script\mainmenu\transcriptmap\BtnTranscript.cs" />
+     <Compile Include="Assets\Script\mainmenu\transcriptmap\LoadSceneProgressBar.cs" />
+     <Compile Include="Assets\Script\mainmenu\transcriptmap\TranscriptMapDialog.cs" />
+     <Compile Include="Assets\Script\mainmenu\transcriptmap\TranscriptMapUI.cs" />
      <Compile Include="Assets\Script\photon\PhotonEngine.cs" />
      <Compile Include="Assets\Script\photon\controller\ControllerBase.cs" />
      <Compile Include="Assets\Script\photon\controller\ServerController.cs" />
      <Compile Include="Assets\Script\player\PlayerAutoMove.cs" />
+     <Compile Include="Assets\Script\player\PlayerEffect.cs" />
+     <Compile Include="Assets\Script\player\PlayerMove.cs" />
      <Compile Include="Assets\Script\player\PlayerVillageAnimation.cs" />
      <Compile Include="Assets\Script\player\PlayerVillageMove.cs" />
      <Compile Include="Assets\Script\start\CharacterShow.cs" />
      <Compile Include="Assets\Script\start\StartmenuController.cs" />
      <Compile Include="Assets\Script\start\serverProperty.cs" />
+     <Compile Include="Assets\Script\transcript\PlayerAnimation.cs" />
+     <Compile Include="Assets\Script\transcript\SkillButton.cs" />
+     <Compile Include="Assets\Script\transcript\TranscriptManager.cs" />
      <None Include="Assets\NGUI\Examples\Shaders\Unlit - Depth Cutout.shader" />
      <None Include="Assets\NGUI\ReadMe - 3.8.2.txt" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Masked 1.shader" />
@@ -231,6 +267,7 @@
      <None Include="Assets\NGUI\Examples\Atlases\Wooden\Arimo20.txt" />
      <None Include="Assets\NGUI\Examples\Atlases\Wooden\Arimo14.txt" />
      <None Include="Assets\Script\txt\InventoryListinfo.txt" />
+     <None Include="Assets\Plugins\IGSoft_Resources\ToolResources\EffectShader\FXMaker_Mask Additive Tint.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text 1.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored (TextureClip).shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed) (TextureClip).shader" />
@@ -246,6 +283,7 @@
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored 3.shader" />
      <None Include="Assets\Model\Npc_boy\villarger_B_Boy\ReadMe [V 1.4]  02 06.txt" />
      <None Include="Assets\NGUI\Examples\Atlases\Refractive\Refractive Font - Normal.txt" />
+     <None Include="Assets\Effects\Shaders\GlowAdditiveTwoColor.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored 2.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text 3.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Packed 2.shader" />
@@ -258,15 +296,20 @@
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Packed.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Packed 3.shader" />
+     <None Include="Assets\Effects\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BrightPassFilter2.shader" />
      <None Include="Assets\NGUI\Examples\Shaders\Unlit - Additive Colored.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Masked.shader" />
      <None Include="Assets\NGUI\Examples\Atlases\Refractive\Refractive Font - Header.txt" />
+     <None Include="Assets\Effects\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\LensFlareCreate.shader" />
      <None Include="Assets\NGUI\Examples\Shaders\Refractive.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text (TextureClip).shader" />
      <None Include="Assets\NGUI\Examples\Shaders\Unlit - Depth.shader" />
      <None Include="Assets\NGUI\Examples\Atlases\SciFi\SciFi Font - Normal.txt" />
+     <None Include="Assets\Plugins\IGSoft_Resources\ToolResources\EffectShader\FXMaker_Mask Alpha Blended Tint.shader" />
      <None Include="Assets\NGUI\Examples\Models\Orc Armor\Orc Armor.shader" />
      <None Include="Assets\NGUI\Examples\Resources\Localization.txt" />
+     <None Include="Assets\Effects\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
+     <None Include="Assets\Effects\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlendForBloom.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
