@@ -74,6 +74,7 @@
      <Compile Include="Assets\Effects\Scripts\Share\UVTextureAnimator.cs" />
      <Compile Include="Assets\Effects\Standard Assets\Image Effects (Pro Only)\ImageEffectBase.cs" />
      <Compile Include="Assets\Effects\Standard Assets\Image Effects (Pro Only)\ImageEffects.cs" />
+     <Compile Include="Assets\Enemy.cs" />
      <Compile Include="Assets\Model\Npc_boy\villarger_B_Boy\scripts\characterRotate.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\EquipItems.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\EquipRandomItem.cs" />
@@ -210,13 +211,13 @@
      <Compile Include="Assets\NGUI\Scripts\UI\UITexture.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UITooltip.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UIViewport.cs" />
-     <Compile Include="Assets\PlayerAttack.cs" />
      <Compile Include="Assets\Script\common\FollowTarget.cs" />
      <Compile Include="Assets\Script\common\GameController.cs" />
      <Compile Include="Assets\Script\common\MessageManager.cs" />
      <Compile Include="Assets\Script\common\NPCManager.cs" />
      <Compile Include="Assets\Script\common\PlayerInfo.cs" />
      <Compile Include="Assets\Script\common\SkillManager.cs" />
+     <Compile Include="Assets\Script\common\SoundManager.cs" />
      <Compile Include="Assets\Script\mainmenu\Knapsack\EquipPopup.cs" />
      <Compile Include="Assets\Script\mainmenu\Knapsack\Inventory.cs" />
      <Compile Include="Assets\Script\mainmenu\Knapsack\InventoryItem.cs" />
@@ -247,6 +248,7 @@
      <Compile Include="Assets\Script\photon\PhotonEngine.cs" />
      <Compile Include="Assets\Script\photon\controller\ControllerBase.cs" />
      <Compile Include="Assets\Script\photon\controller\ServerController.cs" />
+     <Compile Include="Assets\Script\player\PlayerAttack.cs" />
      <Compile Include="Assets\Script\player\PlayerAutoMove.cs" />
      <Compile Include="Assets\Script\player\PlayerEffect.cs" />
      <Compile Include="Assets\Script\player\PlayerMove.cs" />
@@ -291,8 +293,10 @@
      <None Include="Assets\Script\txt\Taskinfo.txt" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Packed 1.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored 1.shader" />
+     <None Include="Assets\Enemy\Masked Orc\Read Me.txt" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored.shader" />
+     <None Include="Assets\Plugins\Pixelplacement\iTween\ReadMe!\ReadMe!.txt" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Packed.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Packed 3.shader" />

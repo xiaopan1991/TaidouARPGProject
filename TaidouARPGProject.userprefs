@@ -7,11 +7,11 @@
       <File FileName="Assets/Script/mainmenu/Skill/SkillUI.cs" Line="1" Column="1" />
       <File FileName="Assets/Script/player/PlayerMove.cs" Line="1" Column="1" />
       <File FileName="Assets/Script/player/PlayerAutoMove.cs" Line="1" Column="1" />
-      <File FileName="Assets/Script/player/PlayerVillageMove.cs" Line="6" Column="28" />
-      <File FileName="Assets/Script/transcript/SkillButton.cs" Line="25" Column="2" />
-      <File FileName="Assets/Script/transcript/PlayerAnimation.cs" Line="16" Column="4" />
-      <File FileName="Assets/Script/mainmenu/Skill/Skill.cs" Line="15" Column="9" />
-      <File FileName="Assets/Script/player/PlayerEffect.cs" Line="14" Column="2" />
+      <File FileName="Assets/Script/player/PlayerVillageMove.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/transcript/SkillButton.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/transcript/PlayerAnimation.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/mainmenu/Skill/Skill.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/player/PlayerEffect.cs" Line="1" Column="1" />
       <File FileName="Assets/PlayerAttack.cs" Line="22" Column="26" />
     </Files>
   </MonoDevelop.Ide.Workbench>
