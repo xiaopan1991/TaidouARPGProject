@@ -3,13 +3,16 @@ using System.Collections;
 
 public class Enemy : MonoBehaviour {
 
-	private Animation eneryAnimation;
 	public GameObject damageEffectPrefab;
 	public int hp = 200;
+
+	private Animation eneryAnimation;
+	private Transform bloodPoint;
 
 	// Use this for initialization
 	void Awake () {
 		eneryAnimation = this.GetComponent<Animation>();
+		bloodPoint = transform.Find("BloodPoint");
 	}
 	
 	// Update is called once per frame
@@ -36,7 +39,7 @@ public class Enemy : MonoBehaviour {
 		float backDistance = float.Parse(proArray[1]);
 		float jumpHeight = float.Parse(proArray[2]);
 		iTween.MoveBy(this.gameObject, transform.InverseTransformDirection(TranscriptManager._instance.Player.transform.forward)*backDistance + Vector3.up*jumpHeight,0.3f);
-		GameObject.Instantiate(damageEffectPrefab, transform.position, Quaternion.identity);
+		GameObject.Instantiate(damageEffectPrefab, bloodPoint.position, Quaternion.identity);
 	}
 
 	void Dead()

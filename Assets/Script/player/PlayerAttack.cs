@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class PlayerAttack : MonoBehaviour {
 
 	private Dictionary<string, PlayerEffect>effectDict = new Dictionary<string, PlayerEffect>();
+	public PlayerEffect[] effectArray;
 	public float distanceAttackForward = 2;
 	public float distanceAttackAround = 2;
 	public int[] damageArray = new int[]{20,30,30,30};
@@ -17,6 +18,10 @@ public class PlayerAttack : MonoBehaviour {
 	void Start(){
 		PlayerEffect[] peArray = this.GetComponentsInChildren<PlayerEffect>();
 		foreach(PlayerEffect pe in peArray)
+		{
+			effectDict.Add(pe.gameObject.name, pe);
+		}
+		foreach(PlayerEffect pe in effectArray)
 		{
 			effectDict.Add(pe.gameObject.name, pe);
 		}
@@ -33,7 +38,11 @@ public class PlayerAttack : MonoBehaviour {
 		string effectName = proArray[1];
 		ShowPlayerEffect(effectName);
 		string soundName = proArray[2];
-		SoundManager._instance.Play(soundName);
+
+		if(soundName != "bird")
+		{
+			SoundManager._instance.Play(soundName);
+		}
 		float moveForward = float.Parse(proArray[3]);
 		if(moveForward > 0.1f)
 		{
@@ -49,7 +58,65 @@ public class PlayerAttack : MonoBehaviour {
 				go.SendMessage("TakeDamage", damageArray[0]+","+proArray[3]+","+proArray[4]);
 			}
 		}
+		else if(posType == "skill1")
+		{
+			ArrayList array = GetEnemyInAttackRange(AttackRange.Around);
+			foreach(GameObject go in array)
+			{
+				if(soundName == "bird")
+				{
+					SoundManager._instance.Play(soundName);
+				}
+			}
+		}
 	}
+
+	void SkillAttack(string args)
+	{
+		string[] proArray = args.Split(',');
+		string posType = proArray[0];
+
+		if(posType == "skill1")
+		{
+			ArrayList array = GetEnemyInAttackRange(AttackRange.Around);
+			foreach(GameObject go in array)
+			{
+				go.SendMessage("TakeDamage", damageArray[1]+","+proArray[1]+","+proArray[2]);
+			}
+		}
+	}
+
+	void ShowEffectDevlHand()
+	{
+		string effectName = "DevilHandMobile";
+		PlayerEffect pe;
+		effectDict.TryGetValue(effectName, out pe);
+		ArrayList array = GetEnemyInAttackRange(AttackRange.Forward);
+		foreach(GameObject go in array)
+		{
+			RaycastHit hit;
+			bool collider = Physics.Raycast(go.transform.position+Vector3.up,Vector3.down, out hit, 10f,LayerMask.GetMask("Ground"));
+			if(collider)
+			{
+				GameObject.Instantiate(pe,hit.point,Quaternion.identity);
+			}
+		}
+	}
+
+	void ShowEffectSelfToTarget(string effectName)
+	{
+//		return;
+		PlayerEffect pe;
+		effectDict.TryGetValue(effectName, out pe);
+		ArrayList array = GetEnemyInAttackRange(AttackRange.Around);
+		foreach(GameObject go in array)
+		{
+			GameObject goEffect = (GameObject.Instantiate(pe) as PlayerEffect).gameObject;
+			goEffect.transform.position = transform.position + Vector3.up;
+			goEffect.GetComponent<EffectSettings>().Target = go;
+		}
+	}
+
 	void ShowPlayerEffect(string effectName)
 	{
 		PlayerEffect pe;
