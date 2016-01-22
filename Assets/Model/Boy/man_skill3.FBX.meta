@@ -151,7 +151,63 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.2431611
+        functionName: Attack
+        data: skill3,BloodStrike1,skill3_1,1,0
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.35866264
+        functionName: Attack
+        data: skill3,BloodStrike2,skill3_2,1,0
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.4893617
+        functionName: Attack
+        data: skill3,BloodStrike3,skill3_3,1,0
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.6747721
+        functionName: Attack
+        data: skill3,BloodStrike4,skill3_4,0,0
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.26443768
+        functionName: SkillAttack
+        data: skill3,1,0
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.38297874
+        functionName: SkillAttack
+        data: skill3,1,0
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.5075988
+        functionName: SkillAttack
+        data: skill3,1,0
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.69908816
+        functionName: SkillAttack
+        data: skill3,0,1
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask:
       - path: 
         weight: 1

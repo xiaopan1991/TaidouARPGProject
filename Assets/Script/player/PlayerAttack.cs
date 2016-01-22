@@ -84,10 +84,27 @@ public class PlayerAttack : MonoBehaviour {
 				go.SendMessage("TakeDamage", damageArray[1]+","+proArray[1]+","+proArray[2]);
 			}
 		}
+		else if(posType == "skill2")
+		{
+			ArrayList array = GetEnemyInAttackRange(AttackRange.Around);
+			foreach(GameObject go in array)
+			{
+				go.SendMessage("TakeDamage", damageArray[2]+","+proArray[1]+","+proArray[2]);
+			}
+		}
+		else if(posType == "skill3")
+		{
+			ArrayList array = GetEnemyInAttackRange(AttackRange.Forward);
+			foreach(GameObject go in array)
+			{
+				go.SendMessage("TakeDamage", damageArray[3]+","+proArray[1]+","+proArray[2]);
+			}
+		}
 	}
 
 	void ShowEffectDevlHand()
 	{
+//		return;
 		string effectName = "DevilHandMobile";
 		PlayerEffect pe;
 		effectDict.TryGetValue(effectName, out pe);
@@ -114,6 +131,24 @@ public class PlayerAttack : MonoBehaviour {
 			GameObject goEffect = (GameObject.Instantiate(pe) as PlayerEffect).gameObject;
 			goEffect.transform.position = transform.position + Vector3.up;
 			goEffect.GetComponent<EffectSettings>().Target = go;
+		}
+	}
+
+	void ShowEffectToTarger(string effectName)
+	{
+		//return;
+		PlayerEffect pe;
+		effectDict.TryGetValue(effectName, out pe);
+		ArrayList array = GetEnemyInAttackRange(AttackRange.Around);
+		foreach(GameObject go in array)
+		{
+			RaycastHit hit;
+			bool collider = Physics.Raycast(go.transform.position+Vector3.up,Vector3.down, out hit, 10f,LayerMask.GetMask("Ground"));
+			if(collider)
+			{
+				GameObject goEffect = (GameObject.Instantiate(pe) as PlayerEffect).gameObject;
+				goEffect.transform.position = hit.point;
+			}
 		}
 	}
 

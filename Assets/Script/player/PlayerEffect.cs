@@ -5,11 +5,17 @@ public class PlayerEffect : MonoBehaviour {
 
 	private Renderer[] rendererArray;
 	private NcCurveAnimation[] curveAnimArray;
+	private GameObject effectOffset;
 
 	// Use this for initialization
 	void Start () {
 		rendererArray = this.GetComponentsInChildren<Renderer>();
 		curveAnimArray = this.GetComponentsInChildren<NcCurveAnimation>();
+
+		if(transform.Find("EffectOffset") != null)
+		{
+			effectOffset = transform.Find("EffectOffset").gameObject;
+		}
 	}
 
 	void Update()
@@ -20,14 +26,23 @@ public class PlayerEffect : MonoBehaviour {
 //		}
 	}
 
-	public void Show () {
-		foreach(Renderer renderer in rendererArray)
+	public void Show () 
+	{
+		if(effectOffset != null)
 		{
-			renderer.enabled = true;
+			effectOffset.SetActive(false);
+			effectOffset.SetActive(true);
 		}
-		foreach(NcCurveAnimation anim in curveAnimArray)
+		else
 		{
-			anim.ResetAnimation();
+			foreach(Renderer renderer in rendererArray)
+			{
+				renderer.enabled = true;
+			}
+			foreach(NcCurveAnimation anim in curveAnimArray)
+			{
+				anim.ResetAnimation();
+			}
 		}
 	}
 }
