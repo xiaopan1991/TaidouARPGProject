@@ -45,6 +45,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Combo.cs" />
      <Compile Include="Assets\Effects\Script\Button.cs" />
      <Compile Include="Assets\Effects\Scripts\Demo\MyGuiV2.cs" />
      <Compile Include="Assets\Effects\Scripts\Prefabs\Balls\AddMaterialOnHit.cs" />
@@ -75,6 +76,7 @@
      <Compile Include="Assets\Effects\Standard Assets\Image Effects (Pro Only)\ImageEffectBase.cs" />
      <Compile Include="Assets\Effects\Standard Assets\Image Effects (Pro Only)\ImageEffects.cs" />
      <Compile Include="Assets\Enemy.cs" />
+     <Compile Include="Assets\HpBarManager.cs" />
      <Compile Include="Assets\Model\Npc_boy\villarger_B_Boy\scripts\characterRotate.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\EquipItems.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\EquipRandomItem.cs" />
@@ -108,6 +110,8 @@
      <Compile Include="Assets\NGUI\Examples\Scripts\Other\UISliderColors.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\Other\WindowAutoYaw.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\Other\WindowDragTilt.cs" />
+     <Compile Include="Assets\NGUI\HUD Text\Scripts\HUDText.cs" />
+     <Compile Include="Assets\NGUI\HUD Text\Scripts\UIFollowTarget.cs" />
      <Compile Include="Assets\NGUI\Scripts\Interaction\LanguageSelection.cs" />
      <Compile Include="Assets\NGUI\Scripts\Interaction\TypewriterEffect.cs" />
      <Compile Include="Assets\NGUI\Scripts\Interaction\UIButton.cs" />
@@ -294,7 +298,9 @@
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Packed 1.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored 1.shader" />
      <None Include="Assets\Enemy\Masked Orc\Read Me.txt" />
+     <None Include="Assets\Texture\005-number combo\number_font.fnt" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored.shader" />
+     <None Include="Assets\Texture\Font\number_font.fnt" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored.shader" />
      <None Include="Assets\Plugins\Pixelplacement\iTween\ReadMe!\ReadMe!.txt" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text.shader" />
