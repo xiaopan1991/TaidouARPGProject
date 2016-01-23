@@ -45,7 +45,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Combo.cs" />
      <Compile Include="Assets\Effects\Script\Button.cs" />
      <Compile Include="Assets\Effects\Scripts\Demo\MyGuiV2.cs" />
      <Compile Include="Assets\Effects\Scripts\Prefabs\Balls\AddMaterialOnHit.cs" />
@@ -75,8 +74,13 @@
      <Compile Include="Assets\Effects\Scripts\Share\UVTextureAnimator.cs" />
      <Compile Include="Assets\Effects\Standard Assets\Image Effects (Pro Only)\ImageEffectBase.cs" />
      <Compile Include="Assets\Effects\Standard Assets\Image Effects (Pro Only)\ImageEffects.cs" />
-     <Compile Include="Assets\Enemy.cs" />
-     <Compile Include="Assets\HpBarManager.cs" />
+     <Compile Include="Assets\Mesh Explosion\Demo\ClickOrTapToExplode.cs" />
+     <Compile Include="Assets\Mesh Explosion\Demo\ReloadScene.cs" />
+     <Compile Include="Assets\Mesh Explosion\Internal\DestroyAfterTime.cs" />
+     <Compile Include="Assets\Mesh Explosion\Internal\DestroyOnFadeCompletion.cs" />
+     <Compile Include="Assets\Mesh Explosion\Internal\Fade.cs" />
+     <Compile Include="Assets\Mesh Explosion\Internal\MeshExplosion.cs" />
+     <Compile Include="Assets\Mesh Explosion\MeshExploder.cs" />
      <Compile Include="Assets\Model\Npc_boy\villarger_B_Boy\scripts\characterRotate.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\EquipItems.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\EquipRandomItem.cs" />
@@ -246,6 +250,9 @@
      <Compile Include="Assets\Script\mainmenu\task\TaskManager.cs" />
      <Compile Include="Assets\Script\mainmenu\task\TaskUI.cs" />
      <Compile Include="Assets\Script\mainmenu\transcriptmap\BtnTranscript.cs" />
+     <Compile Include="Assets\Script\mainmenu\transcriptmap\Combo.cs" />
+     <Compile Include="Assets\Script\mainmenu\transcriptmap\Enemy.cs" />
+     <Compile Include="Assets\Script\mainmenu\transcriptmap\HpBarManager.cs" />
      <Compile Include="Assets\Script\mainmenu\transcriptmap\LoadSceneProgressBar.cs" />
      <Compile Include="Assets\Script\mainmenu\transcriptmap\TranscriptMapDialog.cs" />
      <Compile Include="Assets\Script\mainmenu\transcriptmap\TranscriptMapUI.cs" />
@@ -316,6 +323,7 @@
      <None Include="Assets\NGUI\Examples\Shaders\Unlit - Depth.shader" />
      <None Include="Assets\NGUI\Examples\Atlases\SciFi\SciFi Font - Normal.txt" />
      <None Include="Assets\Plugins\IGSoft_Resources\ToolResources\EffectShader\FXMaker_Mask Alpha Blended Tint.shader" />
+     <None Include="Assets\Mesh Explosion\Read Me.txt" />
      <None Include="Assets\NGUI\Examples\Models\Orc Armor\Orc Armor.shader" />
      <None Include="Assets\NGUI\Examples\Resources\Localization.txt" />
      <None Include="Assets\Effects\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlurAndFlares.shader" />

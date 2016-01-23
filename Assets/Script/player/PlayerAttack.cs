@@ -9,10 +9,21 @@ public class PlayerAttack : MonoBehaviour {
 	public float distanceAttackForward = 2;
 	public float distanceAttackAround = 2;
 	public int[] damageArray = new int[]{20,30,30,30};
+	public int hp = 1000;
+
+	private Animator anim;
+	private GameObject hudTextGameObject;
+	private HUDText hudText;
+	private Transform damageShowPoint;
 
 	public enum AttackRange{
 		Forward,
 		Around
+	}
+
+	void Awake()
+	{
+		anim = this.GetComponent<Animator>();
 	}
 
 	void Start(){
@@ -25,6 +36,9 @@ public class PlayerAttack : MonoBehaviour {
 		{
 			effectDict.Add(pe.gameObject.name, pe);
 		}
+		damageShowPoint = transform.Find("DamageShowPoint");
+		hudTextGameObject = HpBarManager._instance.GetHudText(damageShowPoint.gameObject);
+		hudText = hudTextGameObject.GetComponent<HUDText>();
 	}
 
 	//0 normal skill1 skill2 skill3
@@ -192,6 +206,20 @@ public class PlayerAttack : MonoBehaviour {
 			}
 		}
 		return arrayList;
+	}
+
+	void TakeDamage(int damage)
+	{
+		if(this.hp <= 0)
+			return;
+		this.hp -= damage;
+
+		int random = Random.Range(0,100);
+		if(random < damage)
+		{
+			anim.SetTrigger("TakeDamage");
+		}
+		hudText.Add("-" + damage, Color.red, 1);
 	}
 
 }
