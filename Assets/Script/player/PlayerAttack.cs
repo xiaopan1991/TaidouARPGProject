@@ -95,7 +95,7 @@ public class PlayerAttack : MonoBehaviour {
 			ArrayList array = GetEnemyInAttackRange(AttackRange.Around);
 			foreach(GameObject go in array)
 			{
-				go.SendMessage("TakeDamage", damageArray[1]+","+proArray[1]+","+proArray[2]);
+				go.SendMessage("TakeDamage", damageArray[1]+","+proArray[1]+","+proArray[2], SendMessageOptions.DontRequireReceiver);
 			}
 		}
 		else if(posType == "skill2")
@@ -220,6 +220,7 @@ public class PlayerAttack : MonoBehaviour {
 			anim.SetTrigger("TakeDamage");
 		}
 		hudText.Add("-" + damage, Color.red, 1);
+		BloodScene.Instance.Show();
 	}
 
 }

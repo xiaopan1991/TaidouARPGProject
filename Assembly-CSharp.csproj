@@ -45,6 +45,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\BloodScene.cs" />
      <Compile Include="Assets\Effects\Script\Button.cs" />
      <Compile Include="Assets\Effects\Scripts\Demo\MyGuiV2.cs" />
      <Compile Include="Assets\Effects\Scripts\Prefabs\Balls\AddMaterialOnHit.cs" />
