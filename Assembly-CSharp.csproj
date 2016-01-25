@@ -45,7 +45,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\BloodScene.cs" />
      <Compile Include="Assets\Effects\Script\Button.cs" />
      <Compile Include="Assets\Effects\Scripts\Demo\MyGuiV2.cs" />
      <Compile Include="Assets\Effects\Scripts\Prefabs\Balls\AddMaterialOnHit.cs" />
@@ -269,6 +268,8 @@
      <Compile Include="Assets\Script\start\CharacterShow.cs" />
      <Compile Include="Assets\Script\start\StartmenuController.cs" />
      <Compile Include="Assets\Script\start\serverProperty.cs" />
+     <Compile Include="Assets\Script\transcript\BloodScene.cs" />
+     <Compile Include="Assets\Script\transcript\Boss.cs" />
      <Compile Include="Assets\Script\transcript\PlayerAnimation.cs" />
      <Compile Include="Assets\Script\transcript\SkillButton.cs" />
      <Compile Include="Assets\Script\transcript\TranscriptManager.cs" />
