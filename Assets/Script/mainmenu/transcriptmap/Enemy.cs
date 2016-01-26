@@ -34,6 +34,7 @@ public class Enemy : MonoBehaviour {
 
 	void Start()
 	{
+		TranscriptManager._instance.enemyList.Add(this.gameObject);
 		InvokeRepeating("CalcDistance", 0, 0.1f);
 		Transform hpBarPoint = transform.Find("HpBarPoint");
 		hpBarGameObject = HpBarManager._instance.GetHpBar(hpBarPoint.gameObject);

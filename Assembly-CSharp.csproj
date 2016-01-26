@@ -249,8 +249,10 @@
      <Compile Include="Assets\Script\mainmenu\task\TaskItemUI.cs" />
      <Compile Include="Assets\Script\mainmenu\task\TaskManager.cs" />
      <Compile Include="Assets\Script\mainmenu\task\TaskUI.cs" />
+     <Compile Include="Assets\Script\mainmenu\transcriptmap\BossBullet.cs" />
      <Compile Include="Assets\Script\mainmenu\transcriptmap\BtnTranscript.cs" />
      <Compile Include="Assets\Script\mainmenu\transcriptmap\Combo.cs" />
+     <Compile Include="Assets\Script\mainmenu\transcriptmap\DeactiveTime.cs" />
      <Compile Include="Assets\Script\mainmenu\transcriptmap\Enemy.cs" />
      <Compile Include="Assets\Script\mainmenu\transcriptmap\HpBarManager.cs" />
      <Compile Include="Assets\Script\mainmenu\transcriptmap\LoadSceneProgressBar.cs" />
@@ -270,6 +272,7 @@
      <Compile Include="Assets\Script\start\serverProperty.cs" />
      <Compile Include="Assets\Script\transcript\BloodScene.cs" />
      <Compile Include="Assets\Script\transcript\Boss.cs" />
+     <Compile Include="Assets\Script\transcript\EnemyTrigger.cs" />
      <Compile Include="Assets\Script\transcript\PlayerAnimation.cs" />
      <Compile Include="Assets\Script\transcript\SkillButton.cs" />
      <Compile Include="Assets\Script\transcript\TranscriptManager.cs" />
