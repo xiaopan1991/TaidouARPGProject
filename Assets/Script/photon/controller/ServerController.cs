@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using ExitGames.Client.Photon;
-using GameCommon;
+using TaidouCommon;
 
 public class ServerController : ControllerBase 
 {
@@ -15,7 +15,7 @@ public class ServerController : ControllerBase
 
 	public void GetServerList()
 	{
-		PhotonEngine.Instance.SendRequest(OperationCode.GetServer,new Dictionary<byte, object>());
+		//PhotonEngine.Instance.SendRequest(OperationCode.GetServer,new Dictionary<byte, object>());
 	}
 
 	public override void OnOperationResponse(OperationResponse response)

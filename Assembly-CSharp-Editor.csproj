@@ -213,9 +213,6 @@
  <Reference Include="UnityEditor.TreeEditor">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/TreeEditor/Editor/UnityEditor.TreeEditor.dll</HintPath>
  </Reference>
- <Reference Include="GameCommon">
- <HintPath>/Users/xiaopan/UnitySpace/TaidouARPGProject/Assets/Plugins/GameCommon.dll</HintPath>
- </Reference>
  <Reference Include="Photon3Unity3D">
  <HintPath>/Users/xiaopan/UnitySpace/TaidouARPGProject/Assets/Plugins/Photon3Unity3D.dll</HintPath>
  </Reference>
@@ -233,6 +230,9 @@
  </Reference>
  <Reference Include="UnityEditor.OSXStandalone.Extensions">
  <HintPath>/Applications/Unity/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="TaidouCommon">
+ <HintPath>/Users/xiaopan/UnitySpace/TaidouARPGProject/Assets/Plugins/TaidouCommon.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

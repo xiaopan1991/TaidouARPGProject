@@ -19,3 +19,4 @@
 /Users/xiaopan/UnitySpace/TaidouARPGProject/Temp/bin/Debug/Assembly-CSharp.dll
 /Users/xiaopan/UnitySpace/TaidouARPGProject/obj/Debug/Assembly-CSharp.dll
 /Users/xiaopan/UnitySpace/TaidouARPGProject/obj/Debug/Assembly-CSharp.dll.mdb
+/Users/xiaopan/UnitySpace/TaidouARPGProject/Temp/bin/Debug/TaidouCommon.dll

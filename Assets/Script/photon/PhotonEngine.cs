@@ -2,13 +2,13 @@
 using System.Collections;
 using ExitGames.Client.Photon;
 using System.Collections.Generic;
-using GameCommon;
+using TaidouCommon;
 
 public class PhotonEngine : MonoBehaviour,IPhotonPeerListener
 {
 	public ConnectionProtocol protocol = ConnectionProtocol.Tcp;
 	public string serverAddress = "127.0.0.1:4530";
-	public string applicationName = "GameServer";
+	public string applicationName = "TaidouServe";
 
 	public delegate void OnConnectedToServerEvent();
 	public event OnConnectedToServerEvent OnConnectedToServer;
@@ -24,6 +24,7 @@ public class PhotonEngine : MonoBehaviour,IPhotonPeerListener
 	}
 
 	void Awake () {
+		_instance = this;
 		peer = new PhotonPeer(this, protocol);
 		peer.Connect(serverAddress, applicationName);
 		peer.Service();

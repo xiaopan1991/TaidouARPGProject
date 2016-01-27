@@ -207,11 +207,11 @@
  <Reference Include="UnityEngine.Networking">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
- <Reference Include="GameCommon">
- <HintPath>/Users/xiaopan/UnitySpace/TaidouARPGProject/Assets/Plugins/GameCommon.dll</HintPath>
- </Reference>
  <Reference Include="Photon3Unity3D">
  <HintPath>/Users/xiaopan/UnitySpace/TaidouARPGProject/Assets/Plugins/Photon3Unity3D.dll</HintPath>
+ </Reference>
+ <Reference Include="TaidouCommon">
+ <HintPath>/Users/xiaopan/UnitySpace/TaidouARPGProject/Assets/Plugins/TaidouCommon.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using GameCommon;
+using TaidouCommon;
 using ExitGames.Client.Photon;
 
 public abstract class ControllerBase : MonoBehaviour {
