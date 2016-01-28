@@ -213,6 +213,9 @@
  <Reference Include="TaidouCommon">
  <HintPath>/Users/xiaopan/UnitySpace/TaidouARPGProject/Assets/Plugins/TaidouCommon.dll</HintPath>
  </Reference>
+ <Reference Include="LitJson">
+ <HintPath>/Users/xiaopan/UnitySpace/TaidouARPGProject/Assets/Plugins/LitJson.dll</HintPath>
+ </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

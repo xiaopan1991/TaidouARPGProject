@@ -7,8 +7,8 @@ using TaidouCommon;
 public class PhotonEngine : MonoBehaviour,IPhotonPeerListener
 {
 	public ConnectionProtocol protocol = ConnectionProtocol.Tcp;
-	public string serverAddress = "127.0.0.1:4530";
-	public string applicationName = "TaidouServe";
+	private string serverAddress = "192.168.1.107:4530";
+	private string applicationName = "TaidouServer";
 
 	public delegate void OnConnectedToServerEvent();
 	public event OnConnectedToServerEvent OnConnectedToServer;
@@ -27,11 +27,10 @@ public class PhotonEngine : MonoBehaviour,IPhotonPeerListener
 		_instance = this;
 		peer = new PhotonPeer(this, protocol);
 		peer.Connect(serverAddress, applicationName);
-		peer.Service();
 	}
 
 	void Update () {
-		if(isConnected)
+		if(peer != null)
 		{
 			peer.Service();
 		}
@@ -46,6 +45,7 @@ public class PhotonEngine : MonoBehaviour,IPhotonPeerListener
 		controllers.Remove((byte)opCode);
 	}
 
+	//向服务器发送请求
 	public void SendRequest(OperationCode opCode, Dictionary<byte, object> parameters)
 	{
 		peer.OpCustom((byte)opCode, parameters, true);
@@ -55,6 +55,8 @@ public class PhotonEngine : MonoBehaviour,IPhotonPeerListener
 	{
 		print("level: " + level + "|||" + "message: " + message);
 	}
+
+	//服务器相应请求
 	public void OnOperationResponse (OperationResponse operationResponse)
 	{
 		ControllerBase controller;
@@ -75,7 +77,7 @@ public class PhotonEngine : MonoBehaviour,IPhotonPeerListener
 		{
 		case StatusCode.Connect:
 			isConnected = true;
-			OnConnectedToServer();
+			OnConnectedToServer();//网络连接成功后初始化调用，并请求服务器数据
 			break;
 		default:
 			isConnected = false;
@@ -84,6 +86,6 @@ public class PhotonEngine : MonoBehaviour,IPhotonPeerListener
 	}
 	public void OnEvent (EventData eventData)
 	{
-		throw new System.NotImplementedException ();
+		//throw new System.NotImplementedException ();
 	}
 }

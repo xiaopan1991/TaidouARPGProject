@@ -18,3 +18,4 @@
 /Users/xiaopan/UnitySpace/TaidouARPGProject/Temp/bin/Debug/Mono.Cecil.Pdb.dll
 /Users/xiaopan/UnitySpace/TaidouARPGProject/Temp/bin/Debug/Mono.Cecil.Mdb.dll
 /Users/xiaopan/UnitySpace/TaidouARPGProject/Temp/bin/Debug/TaidouCommon.dll
+/Users/xiaopan/UnitySpace/TaidouARPGProject/Temp/bin/Debug/LitJson.dll

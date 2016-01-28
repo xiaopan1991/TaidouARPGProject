@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class StartmenuController : MonoBehaviour {
 
@@ -43,15 +44,17 @@ public class StartmenuController : MonoBehaviour {
 
 	public UILabel nameLabelCharacterselect;
 	public UILabel levelLabelCharacterselect;
+	private LoginController loginController;
 
 	void Start()
 	{
-		InitServerList();
+		//InitServerList();
 	}
 
 	void Awake()
 	{
 		_instance = this;
+		loginController = this.GetComponent<LoginController>();
 	}
 
 	public void OnUsernameClick()
@@ -76,14 +79,17 @@ public class StartmenuController : MonoBehaviour {
 	{
 		//1.连接服务器，验证用户名和密码
 		//TODO
-		
+		loginController.Login(username, password);
+		 
 		//2.进入角色选择界面
 		//TODO
-		startpanelTweenPos.PlayForward();
-		HidePanel(startpanelTweenPos.gameObject);
-		characterselectTweenPos.gameObject.SetActive(true);
-		characterselectTweenPos.PlayForward();
+//		startpanelTweenPos.PlayForward();
+//		HidePanel(startpanelTweenPos.gameObject);
+//		characterselectTweenPos.gameObject.SetActive(true);
+//		characterselectTweenPos.PlayForward();
 	}
+
+
 
 	IEnumerator HidePanel(GameObject go)
 	{
@@ -147,6 +153,46 @@ public class StartmenuController : MonoBehaviour {
 		startpanelTween.PlayReverse();
 
 		usernameLabelStart.text = username;
+	}
+
+	public void InitServerListFromServer(List<TaidouCommon.Model.ServerProperty> list)
+	{
+		int index = 0;
+		serverProperty spDefault = null;
+		GameObject goDefault = null;
+		
+		foreach(TaidouCommon.Model.ServerProperty temp in list)
+		{
+			string ip = temp.IP;
+			string name = temp.Name;
+			int count = temp.Count;
+
+			GameObject go = null;
+			if(count > 70)
+			{
+				//red
+				go = NGUITools.AddChild(serverlistGrid.gameObject, serveritemRed);
+			}
+			else
+			{
+				//green
+				go = NGUITools.AddChild(serverlistGrid.gameObject, serveritemGreen);
+			}
+			serverProperty sp = go.GetComponent<serverProperty>();
+			sp.m_name = name;
+			sp.m_ip = ip;
+			sp.m_count = count;
+			serverlistGrid.AddChild(go.transform);
+			if(index == 0)
+			{
+				spDefault = sp;
+				goDefault = go;
+			}
+			index++;
+
+		}
+		servernameLabelStart.text = spDefault.m_name;
+		OnServerSelect(goDefault);
 	}
 
 	public void InitServerList()

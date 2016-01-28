@@ -5,16 +5,17 @@ using ExitGames.Client.Photon;
 
 public abstract class ControllerBase : MonoBehaviour {
 
-	public OperationCode opCode;
+//	public OperationCode opCode;
+	public abstract OperationCode OpCode {get;}
 
 	public virtual void Start()
 	{
-		PhotonEngine.Instance.RegisterController(opCode, this);
+		PhotonEngine.Instance.RegisterController(OpCode, this);
 	}
 
 	public virtual void OnDestory()
 	{
-		PhotonEngine.Instance.UnRegisterController(opCode);
+		PhotonEngine.Instance.UnRegisterController(OpCode);
 	}
 
 	public abstract void OnOperationResponse(OperationResponse response);
