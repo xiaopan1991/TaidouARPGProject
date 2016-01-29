@@ -35,3 +35,4 @@
 /Users/xiaopan/UnitySpace/TaidouARPGProject/Temp/bin/Debug/UnityEditor.iOS.Extensions.Xcode.dll
 /Users/xiaopan/UnitySpace/TaidouARPGProject/Temp/bin/Debug/UnityEditor.iOS.Extensions.Xcode.dll.mdb
 /Users/xiaopan/UnitySpace/TaidouARPGProject/Temp/bin/Debug/TaidouCommon.dll
+/Users/xiaopan/UnitySpace/TaidouARPGProject/Temp/bin/Debug/LitJson.dll

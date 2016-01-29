@@ -3,6 +3,7 @@ using System.Collections;
 using ExitGames.Client.Photon;
 using System.Collections.Generic;
 using TaidouCommon;
+using TaidouCommon.Model;
 
 public class PhotonEngine : MonoBehaviour,IPhotonPeerListener
 {
@@ -18,6 +19,9 @@ public class PhotonEngine : MonoBehaviour,IPhotonPeerListener
 	private static PhotonEngine _instance;
 	private Dictionary<byte, ControllerBase> controllers = new Dictionary<byte, ControllerBase>();
 
+	public Role role;
+
+
 	public static PhotonEngine Instance
 	{
 		get{return _instance;}
@@ -27,6 +31,7 @@ public class PhotonEngine : MonoBehaviour,IPhotonPeerListener
 		_instance = this;
 		peer = new PhotonPeer(this, protocol);
 		peer.Connect(serverAddress, applicationName);
+		DontDestroyOnLoad(this.gameObject);
 	}
 
 	void Update () {
@@ -48,6 +53,11 @@ public class PhotonEngine : MonoBehaviour,IPhotonPeerListener
 	//向服务器发送请求
 	public void SendRequest(OperationCode opCode, Dictionary<byte, object> parameters)
 	{
+		peer.OpCustom((byte)opCode, parameters, true);
+	}
+	public void SendRequest(OperationCode opCode, SubCode subCode, Dictionary<byte, object> parameters)
+	{
+		parameters.Add((byte)ParameterCode.SubCode, subCode);
 		peer.OpCustom((byte)opCode, parameters, true);
 	}
 

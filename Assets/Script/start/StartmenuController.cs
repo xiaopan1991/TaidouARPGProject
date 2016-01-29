@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using TaidouCommon.Model;
 
 public class StartmenuController : MonoBehaviour {
 
@@ -23,7 +24,9 @@ public class StartmenuController : MonoBehaviour {
 
 	public static string username;
 	public static string password;
+	public static string rePassword;
 	public static serverProperty sp;
+	public static List<Role> roleList = null;
 
 	public UILabel usernameLabelStart;
 	public UILabel servernameLabelStart;
@@ -45,17 +48,86 @@ public class StartmenuController : MonoBehaviour {
 	public UILabel nameLabelCharacterselect;
 	public UILabel levelLabelCharacterselect;
 	private LoginController loginController;
+	private RegisterController registerController;
+	private RoleController roleController;
 
 	void Start()
 	{
 		//InitServerList();
 	}
 
+	public void OnGetRole(List<Role> roleList)
+	{
+		StartmenuController.roleList = roleList;
+		if(roleList != null && roleList.Count > 0)
+		{
+			//进入角色显示的界面
+			Role role = roleList[0] as Role;
+		}
+		else
+		{
+			//进入角色创建界面
+			ShowRoleAddPanel();
+		}
+	}
+
+	public void ShowRole(Role role)
+	{
+		PhotonEngine.Instance.role = role;
+		ShowCharacterselect();
+
+		nameLabelCharacterselect.text = role.Name;
+		levelLabelCharacterselect.text = "Lv." + role.Level;
+
+		int index = -1;
+		for(int i=0;i<characterArray.Length;i++)
+		{
+			if((characterArray[i].name.IndexOf("boy")>0 && role.IsMan) || (characterArray[i].name.IndexOf("girl")>0 && !role.IsMan))
+			{
+				index = i;
+				break;
+			}
+		}
+		if(index == -1)
+		{
+			return;
+		}
+		GameObject go = GameObject.Instantiate(characterSelectedArray[index], Vector3.zero, Quaternion.identity) as GameObject;
+		go.transform.parent = characterSelectedParent;
+		go.transform.localPosition = Vector3.zero;
+		go.transform.localRotation = Quaternion.identity;
+		go.transform.localScale = new Vector3(1f,1f,1f);
+	}
+	public void OnAddRole(Role role)
+	{
+		if(roleList == null)
+		{
+			roleList = new List<Role>();
+		}
+		roleList.Add(role);
+		ShowRole(role);
+	}
+
 	void Awake()
 	{
 		_instance = this;
 		loginController = this.GetComponent<LoginController>();
+		registerController = this.GetComponent<RegisterController>();
+		roleController = this.GetComponent<RoleController>();
+
+		roleController.OnGetRole += OnGetRole;
+		roleController.OnAddRole += OnAddRole;
 	}
+
+	void OnDestroy()
+	{
+		if(roleController != null)
+		{
+			roleController.OnGetRole -= OnGetRole;
+			roleController.OnAddRole -= OnAddRole;
+		}
+	}
+		
 
 	public void OnUsernameClick()
 	{
@@ -83,10 +155,18 @@ public class StartmenuController : MonoBehaviour {
 		 
 		//2.进入角色选择界面
 		//TODO
-//		startpanelTweenPos.PlayForward();
-//		HidePanel(startpanelTweenPos.gameObject);
-//		characterselectTweenPos.gameObject.SetActive(true);
-//		characterselectTweenPos.PlayForward();
+	}
+
+	public void HideStartPanel()
+	{
+		startpanelTweenPos.PlayForward();
+		StartCoroutine(HidePanel(startpanelTweenPos.gameObject));
+	}
+
+	public void ShowCharacterselect()
+	{
+		characterselectTweenPos.gameObject.SetActive(true);
+		characterselectTweenPos.PlayForward();
 	}
 
 
@@ -146,13 +226,37 @@ public class StartmenuController : MonoBehaviour {
 	{
 		username = usernameInputRegister.value;
 		password = passwordInputRegister.value;
+		rePassword = repasswordInputRegister.value;
 
+		if(username == null || username.Length <= 3)
+		{
+			MessageManager._instance.ShowMessage("用户名不能少于三个字符");
+			return;
+		}
+		if(password == null || password.Length <= 3)
+		{
+			MessageManager._instance.ShowMessage("密码不能少于三个字符");
+			return;
+		}
+		if(password != rePassword)
+		{
+			MessageManager._instance.ShowMessage("密码输入不一致！",2);
+			return;
+		}
+
+		registerController.Register(username, password, this);
+	}
+
+	public void HideRegisterPanel()
+	{
 		registerpanelTween.PlayReverse();
 		StartCoroutine(HidePanel(registerpanelTween.gameObject));
+	}
+
+	public void ShowStartPanel()
+	{
 		startpanelTween.gameObject.SetActive(true);
 		startpanelTween.PlayReverse();
-
-		usernameLabelStart.text = username;
 	}
 
 	public void InitServerListFromServer(List<TaidouCommon.Model.ServerProperty> list)
@@ -270,6 +374,16 @@ public class StartmenuController : MonoBehaviour {
 		}
 		characterSelected = go;
 
+		foreach(var role in roleList)
+		{
+			if((role.IsMan && go.name.IndexOf("boy") > 0) || (!role.IsMan&&go.name.IndexOf("girl")>0))
+			{
+				characternameInput.value = role.Name;
+			}
+		}
+
+
+
 		/*if(characterSelected != null)
 		{
 			if(characterSelected == go)
@@ -301,41 +415,44 @@ public class StartmenuController : MonoBehaviour {
 		charactershowTweenPos.PlayForward();
 	}
 
+	public void ShowRoleAddPanel()
+	{
+		charactershowTweenPos.gameObject.SetActive(true);
+		charactershowTweenPos.PlayForward();
+	}
+
 	public void OnCharactershowButtonSureClick()
 	{
-		//1.check name is right;
-		//TODO
-		//2.check select character or not
-		//TODO
-
-		int index = -1;
-		for(int i=0;i<characterArray.Length;i++)
+		if(characternameInput.value.Length < 3)
 		{
-			if(characterSelected == characterArray[i])
-			{
-				index = i;
-				break;
-			}
-		}
-		if(index == -1)
-		{
+			MessageManager._instance.ShowMessage("角色的名字不能少于三个字符");
 			return;
 		}
-//		Animation[] temp = characterSelectedParent.GetComponentsInChildren<Animation>();
-//		Debug.Log (characterSelectedParent.FindChild("girl_select"));
 
-//		GameObject.Destroy(characterSelectedParent.GetComponentInChildren<Animation>().gameObject);
-		GameObject go = GameObject.Instantiate(characterSelectedArray[index], Vector3.zero, Quaternion.identity) as GameObject;
-		go.transform.parent = characterSelectedParent;
-		go.transform.localPosition = Vector3.zero;
-		go.transform.localRotation = Quaternion.identity;
-		go.transform.localScale = new Vector3(1f,1f,1f);
+		Role role = null;
+		foreach(var roleTemp in roleList)
+		{
+			if((roleTemp.IsMan && characterSelected.name.IndexOf("boy") > 0) || (!roleTemp.IsMan&&characterSelected.name.IndexOf("girl")>0))
+			{
+				characternameInput.value = roleTemp.Name;
+				role = roleTemp;
+			}
+		}
 
-		nameLabelCharacterselect.text = characternameInput.value;
-		levelLabelCharacterselect.text = "Lv.1";
+		if(role == null)
+		{
+			Role roleAdd = new Role();
+			roleAdd.IsMan = characterSelected.name.IndexOf("boy")>0;
+			roleAdd.Name = characternameInput.value;
+			roleAdd.Level = 1;
+			roleController.AddRole(roleAdd);
+		}
+		else
+		{
+			ShowRole(role);
+		}
 
 		OnCharactershowButtonBackClick();
-		Debug.Log("AAAAA:" + characterSelectedParent.childCount);
 	}
 
 	public void OnCharactershowButtonBackClick()

@@ -1,13 +1,13 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj" RefactoringSettings.EnableRefactorings="True">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/photon/PhotonEngine.cs">
+  <MonoDevelop.Ide.Workbench>
     <Files>
       <File FileName="Assets/Script/mainmenu/transcriptmap/BossBullet.cs" Line="1" Column="1" />
-      <File FileName="Assets/Script/photon/PhotonEngine.cs" Line="75" Column="1" />
-      <File FileName="Assets/Script/photon/controller/ControllerBase.cs" Line="9" Column="38" />
-      <File FileName="Assets/Script/photon/controller/ServerController.cs" Line="28" Column="3" />
-      <File FileName="Assets/Script/start/StartmenuController.cs" Line="109" Column="33" />
-      <File FileName="Assets/LoginController.cs" Line="28" Column="10" />
+      <File FileName="Assets/Script/photon/PhotonEngine.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/photon/controller/ControllerBase.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/photon/controller/ServerController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/start/StartmenuController.cs" Line="1" Column="1" />
+      <File FileName="Assets/LoginController.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
