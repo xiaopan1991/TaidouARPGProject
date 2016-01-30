@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TaidouCommon.Model;
+using UnityEngine.SceneManagement;
 
 public class StartmenuController : MonoBehaviour {
 
@@ -27,6 +28,7 @@ public class StartmenuController : MonoBehaviour {
 	public static string rePassword;
 	public static serverProperty sp;
 	public static List<Role> roleList = null;
+
 
 	public UILabel usernameLabelStart;
 	public UILabel servernameLabelStart;
@@ -63,6 +65,7 @@ public class StartmenuController : MonoBehaviour {
 		{
 			//进入角色显示的界面
 			Role role = roleList[0] as Role;
+			ShowRole(role);
 		}
 		else
 		{
@@ -108,6 +111,13 @@ public class StartmenuController : MonoBehaviour {
 		ShowRole(role);
 	}
 
+	public void OnSelectRole()
+	{
+		characterselectTweenPos.gameObject.SetActive(false);
+		AsyncOperation operation = SceneManager.LoadSceneAsync(1);
+		LoadSceneProgressBar._instance.show(operation);
+	}
+
 	void Awake()
 	{
 		_instance = this;
@@ -117,6 +127,7 @@ public class StartmenuController : MonoBehaviour {
 
 		roleController.OnGetRole += OnGetRole;
 		roleController.OnAddRole += OnAddRole;
+		roleController.OnSelectRole += OnSelectRole;
 	}
 
 	void OnDestroy()
@@ -463,6 +474,12 @@ public class StartmenuController : MonoBehaviour {
 		characterselectTweenPos.gameObject.SetActive(true);
 		characterselectTweenPos.PlayForward();
 	}
+
+	public void OnGamePlay()
+	{
+		roleController.SelectRole(PhotonEngine.Instance.role);
+	}
+
 }
 
 

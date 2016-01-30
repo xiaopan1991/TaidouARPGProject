@@ -1,13 +1,14 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj" RefactoringSettings.EnableRefactorings="True">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/common/GameController.cs">
     <Files>
-      <File FileName="Assets/Script/mainmenu/transcriptmap/BossBullet.cs" Line="1" Column="1" />
-      <File FileName="Assets/Script/photon/PhotonEngine.cs" Line="1" Column="1" />
-      <File FileName="Assets/Script/photon/controller/ControllerBase.cs" Line="1" Column="1" />
-      <File FileName="Assets/Script/photon/controller/ServerController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Script/start/StartmenuController.cs" Line="1" Column="1" />
-      <File FileName="Assets/LoginController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/start/StartmenuController.cs" Line="116" Column="46" />
+      <File FileName="Assets/Script/photon/controller/RoleController.cs" Line="8" Column="1" />
+      <File FileName="Assets/Script/common/DelegateEventDefine.cs" Line="9" Column="39" />
+      <File FileName="Assets/Script/photon/controller/LoginController.cs" Line="33" Column="6" />
+      <File FileName="Assets/Script/photon/PhotonEngine.cs" Line="59" Column="3" />
+      <File FileName="Assets/Script/mainmenu/transcriptmap/LoadSceneProgressBar.cs" Line="23" Column="30" />
+      <File FileName="Assets/Script/common/GameController.cs" Line="13" Column="36" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

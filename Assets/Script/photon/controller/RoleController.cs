@@ -23,6 +23,13 @@ public class RoleController : ControllerBase {
 		PhotonEngine.Instance.SendRequest(OpCode, parameters);
 	}
 
+	public void SelectRole(Role role)
+	{
+		Dictionary<byte,object> parameters = new Dictionary<byte, object>();
+		parameters.Add((byte)ParameterCode.Role, JsonMapper.ToJson(role));
+		PhotonEngine.Instance.SendRequest(OpCode, SubCode.SelectRole,parameters);
+	}
+
 	#region implemented abstract members of ControllerBase
 	public override void OnOperationResponse (ExitGames.Client.Photon.OperationResponse response)
 	{
@@ -37,6 +44,12 @@ public class RoleController : ControllerBase {
 			Role role = ParameterTool.GetParameter<Role>(response.Parameters, ParameterCode.Role);
 			OnAddRole(role);
 			break;
+		case SubCode.SelectRole:
+			if(OnSelectRole != null)
+			{
+				OnSelectRole();
+			}
+			break;
 		}
 	}
 	public override TaidouCommon.OperationCode OpCode {
@@ -48,4 +61,5 @@ public class RoleController : ControllerBase {
 
 	public event OnGetRoleEvent OnGetRole;
 	public event OnAddRoleEvent OnAddRole;
+	public event OnSelectRoleEvent OnSelectRole;
 }

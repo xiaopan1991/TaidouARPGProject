@@ -30,6 +30,7 @@ public class LoginController : ControllerBase {
 
 	public override void OnOperationResponse (OperationResponse response)
 	{
+//		Debug.Log("response.ReturnCode: " + response.ReturnCode);
 		switch(response.ReturnCode)
 		{
 		case (short)ReturnCode.Success:

@@ -19,6 +19,7 @@ public class LoadSceneProgressBar : MonoBehaviour {
 
 	public void show(AsyncOperation ao)
 	{
+		Debug.Log("ao.progress: " + ao.progress);
 		gameObject.SetActive(true);
 		bg.SetActive(true);
 		progressBar.value = ao.progress;
