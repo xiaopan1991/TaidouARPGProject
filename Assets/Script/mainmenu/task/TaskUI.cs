@@ -23,6 +23,11 @@ public class TaskUI : MonoBehaviour {
 
 	void Start()
 	{
+		TaskManager._instance.OnSyncTaskComplete += this.OnSyncTaskComplete;
+	}
+
+	public void OnSyncTaskComplete()
+	{
 		InitTaskList();
 	}
 

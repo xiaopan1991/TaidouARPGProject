@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using TaidouCommon.Model;
 
 public class TaskManager : MonoBehaviour {
 
@@ -7,6 +9,7 @@ public class TaskManager : MonoBehaviour {
 	public TextAsset taskinfoText;
 	private Task currentTask;
 	private ArrayList taskList = new ArrayList();
+	private Dictionary<int, Task> taskDict = new Dictionary<int, Task>();
 	private PlayerAutoMove playerAutoMove;
 	public PlayerAutoMove PlayerAutoMove
 	{
@@ -19,12 +22,52 @@ public class TaskManager : MonoBehaviour {
 		}
 	}
 
+	public TaskDBController taskDBController;
+
 	void Awake()
 	{
 		_instance = this;
+		this.taskDBController = this.GetComponent<TaskDBController>();
+
+		this.taskDBController.OnGetTaskDBList += this.OnGetTaskDBList;
+		this.taskDBController.OnAddTaskDB += this.OnAddTaskDB;
+		this.taskDBController.OnUpdateTaskDB += this.OnUpdateTaskDB;
+
 		InitTask();
+
+		taskDBController.GetTaskDBList();
 	}
 
+	public void OnGetTaskDBList(List<TaskDB> list)
+	{
+		if(list == null)return;
+		foreach(var taskDB in list)
+		{
+			Task task = null;
+			if(taskDict.TryGetValue(taskDB.TaskID, out task))
+			{
+				task.SyncTask(taskDB);
+			}
+		}
+		if(OnSyncTaskComplete != null)
+		{
+			OnSyncTaskComplete();
+		}
+	}
+	public void OnAddTaskDB(TaskDB taskDB)
+	{
+		Task task = null;
+		if(taskDict.TryGetValue(taskDB.TaskID, out task))
+		{
+			task.SyncTask(taskDB);
+		}
+	}
+	public void OnUpdateTaskDB()
+	{
+		
+	}
+
+	public event OnSyncTaskCompleteEvent OnSyncTaskComplete;
 
 
 	/// <summary>
@@ -59,6 +102,7 @@ public class TaskManager : MonoBehaviour {
 			task.IdNpc = int.Parse(proArray[8]);
 			task.IdTranscript = int.Parse(proArray[9]);
 			taskList.Add(task);
+			taskDict.Add(task.Id, task);
 		}
 	}
 
@@ -81,7 +125,8 @@ public class TaskManager : MonoBehaviour {
 	public void OnAcceptTask()
 	{
 		this.currentTask.TaskProgress = TaskProgress.Accept;
-		//TODO寻路到副本
+		currentTask.UpdateTask(this);
+		//寻路到副本
 		PlayerAutoMove.SetDestination(NPCManager._instance.TranscriptGo.transform.position);
 	}
 	public void OnArriveDestination()

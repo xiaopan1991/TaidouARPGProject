@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using TaidouCommon.Model;
 
 public enum InfoType
 {
@@ -32,6 +33,8 @@ public class PlayerInfo : MonoBehaviour {
 	void Awake()
 	{
 		_instance = this;
+		this.OnPlayerInfoChanged += this.OnPlayerInfoChange;
+		roleController = this.GetComponent<RoleController>();
 	}
 	void Start()
 	{
@@ -45,6 +48,7 @@ public class PlayerInfo : MonoBehaviour {
 			if(energyTime > 60)
 			{
 				Energy += 1;
+				PhotonEngine.Instance.role.Energy = Energy;
 				this.energyTime -= 60;
 				OnPlayerInfoChanged(InfoType.Energy);
 			}
@@ -60,6 +64,7 @@ public class PlayerInfo : MonoBehaviour {
 			if(toughenTime > 60)
 			{
 				Toughen += 1;
+				PhotonEngine.Instance.role.Toughen = Toughen;
 				this.toughenTime -= 60;
 				OnPlayerInfoChanged(InfoType.Toughen);
 			}
@@ -113,6 +118,8 @@ public class PlayerInfo : MonoBehaviour {
 
 	public delegate void OnPlayerInfoChangeEvent(InfoType type);
 	public event OnPlayerInfoChangeEvent OnPlayerInfoChanged;
+
+	private RoleController roleController;
 
 
 	#region get set function
@@ -233,15 +240,23 @@ public class PlayerInfo : MonoBehaviour {
 
 	void Init()
 	{
-		this.Coin = 10000;
-		this.Diamond = 10000;
-		this.Energy = 50;
-		this.HeadPortrait = "头像底板女性";
-		this.Level = 3;
-		this.Exp = 20;
-		this.Name = "柔小美";
-		this.Power = 1745;
-		this.Toughen = 34;
+		Role role = PhotonEngine.Instance.role;
+
+		this.Coin = role.Coin;
+		this.Diamond = role.Diamond;
+		this.Energy = role.Energy;
+		if(role.IsMan)
+		{
+			this.HeadPortrait = "头像底板女性";
+		}
+		else
+		{
+			this.HeadPortrait = "头像底板女性";
+		}
+		this.Level = role.Level;
+		this.Exp = role.Exp;
+		this.Name = role.Name;
+		this.Toughen = role.Toughen;
 
 		/*this.BraceleId = 1001;
 		this.WingID = 1002;
@@ -312,10 +327,20 @@ public class PlayerInfo : MonoBehaviour {
 		return (int)power;
 	}
 
+	public void OnPlayerInfoChange(InfoType infoType)
+	{
+		if(infoType == InfoType.Name || infoType == InfoType.Energy || infoType == InfoType.Toughen)
+		{
+			roleController.UpdateRole(PhotonEngine.Instance.role);
+		}
+	}
+
+
 	public void ChangeName(string newName)
 	{
 		this.Name = newName;
-		OnPlayerInfoChanged(InfoType.All);
+		PhotonEngine.Instance.role.Name = this.Name;
+		OnPlayerInfoChanged(InfoType.Name);
 	}
 	public void DressOn(InventoryItem it)
 	{

@@ -456,6 +456,11 @@ public class StartmenuController : MonoBehaviour {
 			roleAdd.IsMan = characterSelected.name.IndexOf("boy")>0;
 			roleAdd.Name = characternameInput.value;
 			roleAdd.Level = 1;
+			roleAdd.Exp = 0;
+			roleAdd.Coin = 20000;
+			roleAdd.Diamond = 100;
+			roleAdd.Energy = 100;
+			roleAdd.Toughen = 50;
 			roleController.AddRole(roleAdd);
 		}
 		else

@@ -49,5 +49,10 @@ public class LoginController : ControllerBase {
 		}
 	}
 
+	public override void OnDestory()
+	{
+		base.OnDestory();
+	}
+
 	#endregion
 }

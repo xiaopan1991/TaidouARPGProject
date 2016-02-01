@@ -265,6 +265,7 @@
      <Compile Include="Assets\Script\photon\controller\RegisterController.cs" />
      <Compile Include="Assets\Script\photon\controller\RoleController.cs" />
      <Compile Include="Assets\Script\photon\controller\ServerController.cs" />
+     <Compile Include="Assets\Script\photon\controller\TaskDBController.cs" />
      <Compile Include="Assets\Script\player\PlayerAttack.cs" />
      <Compile Include="Assets\Script\player\PlayerAutoMove.cs" />
      <Compile Include="Assets\Script\player\PlayerEffect.cs" />

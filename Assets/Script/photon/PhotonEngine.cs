@@ -43,7 +43,19 @@ public class PhotonEngine : MonoBehaviour,IPhotonPeerListener
 
 	public void RegisterController(OperationCode opCode, ControllerBase controller)
 	{
-		controllers.Add((byte)opCode, controller);
+		if(opCode == OperationCode.Role)
+		{
+//			Debug.Log("0000000000000");
+		}
+		if(controllers.ContainsKey((byte)opCode))
+		{
+//			Debug.Log("opCode: " + opCode);
+//			Debug.Log("22222222222");
+		}
+		else
+		{
+			controllers.Add((byte)opCode, controller);
+		}
 	}
 	public void UnRegisterController(OperationCode opCode)
 	{

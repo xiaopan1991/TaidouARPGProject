@@ -27,7 +27,14 @@ public class RoleController : ControllerBase {
 	{
 		Dictionary<byte,object> parameters = new Dictionary<byte, object>();
 		parameters.Add((byte)ParameterCode.Role, JsonMapper.ToJson(role));
-		PhotonEngine.Instance.SendRequest(OpCode, SubCode.SelectRole,parameters);
+		PhotonEngine.Instance.SendRequest(OpCode, SubCode.SelectRole, parameters);
+	}
+
+	public void UpdateRole(Role role)
+	{
+		Dictionary<byte,object> parameters = new Dictionary<byte, object>();
+		parameters.Add((byte)ParameterCode.Role, JsonMapper.ToJson(role));
+		PhotonEngine.Instance.SendRequest(OpCode, SubCode.UpdateRole, parameters);
 	}
 
 	#region implemented abstract members of ControllerBase
@@ -62,4 +69,9 @@ public class RoleController : ControllerBase {
 	public event OnGetRoleEvent OnGetRole;
 	public event OnAddRoleEvent OnAddRole;
 	public event OnSelectRoleEvent OnSelectRole;
+
+	public override void OnDestory()
+	{
+		base.OnDestory();
+	}
 }

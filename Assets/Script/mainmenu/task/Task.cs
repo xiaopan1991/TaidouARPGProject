@@ -1,25 +1,54 @@
 ﻿using UnityEngine;
 using System.Collections;
+using TaidouCommon.Model;
+using System;
 
 public enum TaskType
 {
-	Main,
-	Reward,
-	Daily
+	Main = 0,
+	Reward = 1,
+	Daily= 2
 }
 
 public enum TaskProgress
 {
-	NoStart,
-	Accept,
-	Complete,
-	Reward
+	NoStart = 0,
+	Accept = 1,
+	Complete = 2,
+	Reward = 3
 }
 
 public class Task 
 {
 	public delegate void OnTaskChangeEvent();
 	public event OnTaskChangeEvent OnTaskChange;
+
+	public TaskDB TaskDB{get; set;}
+
+	//用来同步服务器传来的信息
+	public void SyncTask(TaskDB taskDb)
+	{
+		TaskDB = taskDb;
+		taskProgress = (TaskProgress)taskDb.State;
+	}
+
+	public void UpdateTask(TaskManager manager)
+	{
+		if(TaskDB == null)
+		{
+			TaskDB = new TaskDB();
+			TaskDB.State = (int) taskProgress;
+			TaskDB.TaskID = id;
+			TaskDB.LastUpDateTime = new DateTime();
+			TaskDB.Type = (int) taskType;
+			manager.taskDBController.AddTaskDB(TaskDB);
+		}
+		else
+		{
+			this.TaskDB.State = (int) taskProgress;
+			manager.taskDBController.UpdateTaskDB(this.TaskDB);
+		}
+	}
 
 	private int id;
 	public int Id

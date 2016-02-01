@@ -46,5 +46,10 @@ public class RegisterController : ControllerBase {
 		}
 	}
 
+	public override void OnDestory()
+	{
+		base.OnDestory();
+	}
+
 	#endregion
 }

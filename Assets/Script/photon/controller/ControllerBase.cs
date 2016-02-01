@@ -15,6 +15,7 @@ public abstract class ControllerBase : MonoBehaviour {
 
 	public virtual void OnDestory()
 	{
+		Debug.Log("OpCode: " + OpCode);
 		PhotonEngine.Instance.UnRegisterController(OpCode);
 	}
 
