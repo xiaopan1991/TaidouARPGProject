@@ -15,3 +15,9 @@ public delegate void OnGetTaskDBListEvent(List<TaskDB> list);
 public delegate void OnAddTaskDBEvent(TaskDB taskDB);
 
 public delegate void OnUpdateTaskDBEvent();
+
+public delegate void OnGetInventoryItemDBListEvent(List<InventoryItemDB> list);
+
+public delegate void OnAddInventoryItemDBEvent(InventoryItemDB itemDB);
+
+public delegate void OnUpdateInventoryItemDBEvent();

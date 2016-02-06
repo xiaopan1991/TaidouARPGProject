@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using TaidouCommon.Model;
 
 public class InventoryManager : MonoBehaviour 
 {
@@ -14,14 +15,24 @@ public class InventoryManager : MonoBehaviour
 	public delegate void OnInventoryChangeEvent();
 	public event OnInventoryChangeEvent OnInventoryChange;
 
+	private InventoryItemDBController inventoryItemDBController;
+
 	void Awake () {
 		_instance = this;
+		inventoryItemDBController = this.GetComponent<InventoryItemDBController>();
+		inventoryItemDBController.OnGetInventoryItemDBList += this.OnGetInventoryItemDBList;
+		inventoryItemDBController.OnAddInventoryItemDB += this.OnAddInventoryItemDB;
 		ReadInventoryInfo();
 	}
 
 	void Start()
 	{
 		ReadInventoryItemInfo();
+	}
+
+	void Update()
+	{
+		PickUp();
 	}
 
 
@@ -135,20 +146,77 @@ public class InventoryManager : MonoBehaviour
 	void ReadInventoryItemInfo()
 	{
 		//TODO   连接服务器获取拥有的物品信息
-		for(int i=0;i<20;i++)
-		{
-			int id = Random.Range(1001,1020);
 
-			Inventory inventory = null;
-			inventoryDic.TryGetValue(id, out inventory);
-			if(inventory.InventoryTYPE == InventoryType.Equip)
+//		for(int i=0;i<20;i++)
+//		{
+//			int id = Random.Range(1001,1020);
+//
+//			Inventory inventory = null;
+//			inventoryDic.TryGetValue(id, out inventory);
+//			if(inventory.InventoryTYPE == InventoryType.Equip)
+//			{
+//				InventoryItem it = new InventoryItem();
+//				it.Inventory = inventory;
+//				it.Level = Random.Range(1,10);
+//				it.Count = 1;
+//				//inventoryItemDict.Add(id,it);
+//				inventoryItemList.Add(it);
+//			}
+//			else
+//			{
+//				InventoryItem it = null;
+//				//bool isExit = inventoryItemDict.TryGetValue(id, out it);
+//				bool isExit = false;
+//				foreach(InventoryItem temp in inventoryItemList)
+//				{
+//					if(temp.Inventory.ID == id)
+//					{
+//						isExit = true;
+//						it = temp;
+//						break;
+//					}
+//				}
+//				if(isExit)
+//				{
+//					it.Count++;
+//				}
+//				else
+//				{
+//					it = new InventoryItem();
+//					it.Inventory = inventory;
+//					it.Level = 0;
+//					it.Count = 1;
+//				}
+//				//inventoryItemDict.Add(id,it);
+//				inventoryItemList.Add(it);
+//			}
+//		}
+		inventoryItemDBController.GetInventoryItemDB();
+
+	}
+
+	void PickUp()
+	{
+		if(Input.GetKeyDown(KeyCode.P))
+		{
+			int id = Random.Range(1001, 1020);
+			Inventory i = null;
+			inventoryDic.TryGetValue(id, out i);
+			if(i.InventoryTYPE == InventoryType.Equip)
 			{
-				InventoryItem it = new InventoryItem();
-				it.Inventory = inventory;
-				it.Level = Random.Range(1,10);
-				it.Count = 1;
-				//inventoryItemDict.Add(id,it);
-				inventoryItemList.Add(it);
+//				InventoryItem it = new InventoryItem();
+//				it.Inventory = i;
+//				it.Level = Random.Range(1, 10);
+//				it.Count = 1;
+//				inventoryItemList.Add(it);
+//				InventoryItemDB itemDB = it.CreateInventoryItemDB();
+
+				InventoryItemDB itemDB = new InventoryItemDB();
+				itemDB.InventoryID = id;
+				itemDB.Level = Random.Range(1, 10);
+				itemDB.Count = 1;
+				itemDB.IsDressed = false;
+				inventoryItemDBController.AddInventoryItemDB(itemDB);
 			}
 			else
 			{
@@ -167,17 +235,35 @@ public class InventoryManager : MonoBehaviour
 				if(isExit)
 				{
 					it.Count++;
+					inventoryItemDBController.UpdateInventoryItemDB(it.InventoryItemDB);
 				}
 				else
 				{
-					it = new InventoryItem();
-					it.Inventory = inventory;
-					it.Level = 0;
-					it.Count = 1;
+					InventoryItemDB itemDB = new InventoryItemDB();
+					itemDB.InventoryID = id;
+					itemDB.Level = Random.Range(1, 10);
+					itemDB.Count = 1;
+					itemDB.IsDressed = false;
+					inventoryItemDBController.AddInventoryItemDB(itemDB);
 				}
-				//inventoryItemDict.Add(id,it);
-				inventoryItemList.Add(it);
 			}
+		}
+	}
+
+	public void OnAddInventoryItemDB(InventoryItemDB itemDB)
+	{
+		InventoryItem it = new InventoryItem(itemDB);
+		inventoryItemList.Add(it);
+
+		OnInventoryChange();
+	}
+
+	public void OnGetInventoryItemDBList(List<InventoryItemDB> list)
+	{
+		foreach(var itemDB in list)
+		{
+			InventoryItem it = new InventoryItem(itemDB);
+			inventoryItemList.Add(it);
 		}
 		OnInventoryChange();
 	}
@@ -185,6 +271,13 @@ public class InventoryManager : MonoBehaviour
 	public void RemoveInventoryItem(InventoryItem it)
 	{
 		this.inventoryItemList.Remove(it);
+	}
+	void OnDestory()
+	{
+		if(inventoryItemDBController)
+		{
+			inventoryItemDBController.OnGetInventoryItemDBList -= this.OnGetInventoryItemDBList;
+		}
 	}
 }
 

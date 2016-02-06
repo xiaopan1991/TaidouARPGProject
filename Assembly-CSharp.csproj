@@ -261,6 +261,7 @@
      <Compile Include="Assets\Script\mainmenu\transcriptmap\TranscriptMapUI.cs" />
      <Compile Include="Assets\Script\photon\PhotonEngine.cs" />
      <Compile Include="Assets\Script\photon\controller\ControllerBase.cs" />
+     <Compile Include="Assets\Script\photon\controller\InventoryItemDBController.cs" />
      <Compile Include="Assets\Script\photon\controller\LoginController.cs" />
      <Compile Include="Assets\Script\photon\controller\RegisterController.cs" />
      <Compile Include="Assets\Script\photon\controller\RoleController.cs" />

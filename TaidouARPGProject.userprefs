@@ -2,16 +2,21 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="Assets/Script/photon/controller/TaskDBController.cs" Line="1" Column="1" />
       <File FileName="Assets/Script/common/DelegateEventDefine.cs" Line="1" Column="1" />
-      <File FileName="Assets/Script/common/GameController.cs" Line="1" Column="1" />
       <File FileName="Assets/Script/mainmenu/task/TaskManager.cs" Line="1" Column="1" />
       <File FileName="Assets/Script/mainmenu/task/Task.cs" Line="1" Column="1" />
-      <File FileName="Assets/Script/mainmenu/task/TaskUI.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/common/PlayerInfo.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/start/StartmenuController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/photon/controller/RoleController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/photon/controller/ControllerBase.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/photon/PhotonEngine.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/photon/controller/LoginController.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/xiaopan/UnitySpace/TaidouARPGProject/Assets/Script/photon/PhotonEngine.cs" line="62" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
