@@ -1,22 +1,20 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj" RefactoringSettings.EnableRefactorings="True">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/photon/controller/LoginController.cs">
     <Files>
+      <File FileName="Assets/Script/start/CharacterShow.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/photon/controller/InventoryItemDBController.cs" Line="28" Column="32" />
       <File FileName="Assets/Script/common/DelegateEventDefine.cs" Line="1" Column="1" />
       <File FileName="Assets/Script/mainmenu/task/TaskManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/Script/mainmenu/task/Task.cs" Line="1" Column="1" />
-      <File FileName="Assets/Script/common/PlayerInfo.cs" Line="1" Column="1" />
-      <File FileName="Assets/Script/start/StartmenuController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Script/photon/controller/RoleController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Script/photon/controller/ControllerBase.cs" Line="1" Column="1" />
-      <File FileName="Assets/Script/photon/PhotonEngine.cs" Line="1" Column="1" />
-      <File FileName="Assets/Script/photon/controller/LoginController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/mainmenu/Knapsack/InventoryManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/mainmenu/Knapsack/InventoryItem.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/photon/PhotonEngine.cs" Line="88" Column="29" />
+      <File FileName="Assets/Script/photon/controller/ControllerBase.cs" Line="22" Column="33" />
+      <File FileName="Assets/Script/photon/controller/LoginController.cs" Line="31" Column="70" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/xiaopan/UnitySpace/TaidouARPGProject/Assets/Script/photon/PhotonEngine.cs" line="62" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
